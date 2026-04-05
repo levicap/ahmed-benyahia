@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a28"/>
+      <stop offset="100%" stop-color="#0f0f18"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect width="400" height="500" rx="24"/>
+    </clipPath>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="500" rx="24" fill="url(#body)"/>
+  <rect width="400" height="500" rx="24" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="100" x2="400" y2="100" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="300" x2="400" y2="300" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="400" x2="400" y2="400" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="0" x2="100" y2="500" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="500" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="500" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+  <!-- Glow circle -->
+  <circle cx="200" cy="195" r="110" fill="#10b981" fill-opacity="0.06"/>
+  <!-- Avatar silhouette: head -->
+  <circle cx="200" cy="175" r="72" fill="#10b981" fill-opacity="0.22"/>
+  <circle cx="200" cy="175" r="60" fill="#1e1e30"/>
+  <!-- Initials -->
+  <text x="200" y="200" text-anchor="middle" fill="#10b981" font-size="52" font-weight="800" font-family="Inter, -apple-system, sans-serif" opacity="0.85">A.R</text>
+  <!-- Avatar silhouette: shoulders -->
+  <ellipse cx="200" cy="390" rx="115" ry="80" fill="#10b981" fill-opacity="0.14"/>
+  <!-- Border ring -->
+  <rect width="400" height="500" rx="24" fill="none" stroke="#10b981" stroke-opacity="0.2" stroke-width="1.5"/>
+  <!-- Helper text -->
+  <text x="200" y="455" text-anchor="middle" fill="#10b981" font-size="12" font-family="Inter, sans-serif" opacity="0.45">Replace with your photo:</text>
+  <text x="200" y="475" text-anchor="middle" fill="#10b981" font-size="11" font-family="Inter, sans-serif" opacity="0.35">/public/images/avatar.jpg</text>
+</svg>
