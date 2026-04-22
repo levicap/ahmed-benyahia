@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Layers, Zap, Plug, Gauge, PenTool, Cloud, Database, Search,
   ArrowUpRight,
 } from "lucide-react";
 import { data } from "@/data/portfolio";
+import { toSlug } from "@/lib/slug";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -48,6 +50,7 @@ export function Services() {
             viewport={{ once: true, margin: "-30px" }}
             className="relative rounded-2xl overflow-hidden mb-4 group"
           >
+          <Link href={`/services/${toSlug(featured.title)}`} className="block">
             {/* Gradient border via pseudo-layer */}
             <div
               className="absolute inset-0 rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -136,6 +139,7 @@ export function Services() {
                 </div>
               </div>
             </div>
+          </Link>
           </motion.div>
         )}
 
@@ -158,12 +162,13 @@ function ServiceCard({
   index: number;
 }) {
   return (
+    <Link href={`/services/${toSlug(service.title)}`}>
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: index * 0.07 }}
       viewport={{ once: true, margin: "-20px" }}
-      className="group relative rounded-2xl border p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+      className="group relative rounded-2xl border p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer"
       style={{ background: "var(--surface)", borderColor: "var(--border)" }}
     >
       {/* Hover gradient overlay */}
@@ -219,5 +224,6 @@ function ServiceCard({
         <ArrowUpRight size={12} style={{ color: "var(--accent)" }} />
       </div>
     </motion.div>
+    </Link>
   );
 }

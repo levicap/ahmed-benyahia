@@ -1,0 +1,128 @@
+\documentclass{resume}
+
+\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Ahmed Ben Yahia}
+\address{+216 50 193 344 \\ Sfax, Tunisia — Open to Remote \& Relocation}
+\address{\href{mailto:ahmedbenyahia654@gmail.com}{ahmedbenyahia654@gmail.com} \\ \href{https://linkedin.com/in/ahmedbenyahia}{linkedin.com/in/ahmedbenyahia} \\ \href{https://github.com/levicap}{github.com/levicap} \\ \href{https://ahmedbenyahia-pro-ten.vercel.app/}{ahmedbenyahia-pro-ten.vercel.app}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{OBJECTIVE}
+
+{AI \& Automation Engineer with 2+ years of experience building production RAG pipelines, LLM-powered agents, and end-to-end workflow automations for international clients. Proven track record of reducing manual workloads by 60--80\% through intelligent process automation, vector search systems, AI voice agents, and multi-source data enrichment pipelines. Skilled in n8n, OpenAI API, LangChain, ElevenLabs, and Twilio — with a full-stack background enabling complete ownership from pipeline design to frontend delivery. Seeking roles in AI engineering, automation architecture, or LLM product development.}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{SKILLS}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Automation         & n8n, Zapier, Webhook Orchestration, Cron Scheduling, Make (Integromat) \\
+AI / LLM           & OpenAI API (GPT-4o, GPT-4), Gemini API, LangChain, Prompt Engineering, RAG \\
+Vector \& Search   & pgvector, Pinecone, Semantic Search, Text Embeddings, Document Chunking \\
+Voice \& SMS       & ElevenLabs, Twilio, AI Voice Agents, SMS Campaign Automation \\
+Data Acquisition   & Web Scraping, Apollo API, FindThatLead, GitHub API, LinkedIn Scraping \\
+CRM / Integrations & HubSpot, Gospott, Clarify CRM, Supabase, Stripe, Webflow CMS API \\
+Languages          & Python, TypeScript, JavaScript \\
+Backend \& Cloud   & Node.js, PostgreSQL, Docker, GitHub Actions, Vercel, REST APIs \\
+Soft Skills        & Workflow Architecture, Process Mapping, Tech Scoping, Remote Delivery \\
+\end{tabular}\\
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{EXPERIENCE}
+
+\textbf{AI Automation Engineer} \hfill Nov 2025 -- Present \\
+Lean Orchester \hfill \textit{Remote}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Built end-to-end RAG pipeline for MiniSport with automated document ingestion, vector embedding, and conversational retrieval — reducing internal support queries by 60\%.
+    \item Engineered AI chat agent for iPrint handling 500+ daily customer queries with Stripe payment integration and appointment scheduling baked into the conversation flow, improving response time by 45\%.
+    \item Extended iPrint chatbot into a Voice AI Agent using ElevenLabs, enabling natural language phone interactions without adding headcount.
+    \item Built multi-source lead enrichment automation (Upwork, GitHub, Indeed) using Apollo API and LLM-based qualification, reducing candidate screening time by 80\%.
+    \item Deployed ConvertKit-Twilio SMS campaign system with n8n orchestration delivering messages to 10K+ subscribers at 98\% deliverability.
+    \item Automated ServiceM8 field service reporting pipeline extracting job data, technician KPIs, and revenue metrics — saving the client 15 hours/week of manual reporting.
+\end{itemize}
+
+\textbf{Full Stack Developer Intern} \hfill Feb 2024 -- May 2024 \\
+Aziin Engineering Solutions \hfill \textit{Hybrid — Sfax, Tunisia}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Integrated GPT-4-powered AI exam generator with automated grading into an e-learning SaaS platform, reducing instructor workload by 40\% for 500+ students.
+    \item Implemented AI-adaptive learning engine that personalizes content delivery, boosting platform engagement by 35\% across 1,000+ concurrent users.
+    \item Built Stripe payment integration processing \$50K+ in monthly transactions with JWT/OAuth2 authentication and RBAC.
+\end{itemize}
+
+\textbf{Full Stack Developer Intern} \hfill Jul 2024 -- Aug 2024 \\
+Grow Up Agency \hfill \textit{Remote}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Implemented automated email/SMS notification workflows using Node.js, SMTP, and Twilio for a healthcare management platform, improving operational efficiency by 30\%.
+\end{itemize}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{PROJECTS}
+\vspace{-1.25em}
+
+\item \textbf{iPrint — AI Voice \& Chat Support Agent.} {Dual-channel AI support system: a chat agent for text queries and an ElevenLabs + Twilio voice agent for phone calls — handling 500+ queries/day with Stripe payments and automated scheduling inside the conversation flow. Response time improved 45\%. Stack: n8n, ElevenLabs, Twilio, OpenAI API, Stripe.}
+
+\item \textbf{BookieLink — RAG Customer Support Bot.} {RAG-powered support chatbot trained on 5,000+ Q\&A pairs with vector-based semantic search and automatic escalation for unrecognized queries. Achieved 85\% query accuracy and cut support ticket volume by 70\% in month one. Stack: n8n, OpenAI API, Vector DB, Webhooks.}
+
+\item \textbf{MiniSport — Internal RAG Knowledge Assistant.} {Natural-language interface over all company documentation — with automated ingestion, re-indexing on update, and conversational retrieval. Reduced internal doc queries by 60\%. Stack: n8n, OpenAI API, pgvector.}
+
+\item \textbf{Lead Acquisition System — LLM Qualification Pipeline.} {Multi-source scraping (Upwork, GitHub, Indeed) → LLM-based scoring against custom criteria → Apollo contact enrichment → deduplicated CRM insertion. Eliminated 80\% of manual sourcing. Stack: n8n, Web Scraping, Apollo API, GPT-4.}
+
+\item \textbf{TechForce — GitHub Developer Sourcing \& Indeed Enrichment.} {Two-pipeline recruiting automation: (1) scrapes GitHub developers by city from Supabase job locations and syncs to Gospott CRM; (2) scrapes Indeed listings, enriches contacts via Apollo, and inserts into Clarify CRM — fully on autopilot. Stack: n8n, GitHub API, Apollo API, Supabase.}
+
+\item \textbf{Tonic — SMS Campaign Automation at 10K+ Scale.} {Kit.com subscriber sync + Twilio SMS delivery orchestrated via n8n — with campaign scheduling, timezone awareness, and per-campaign delivery tracking. 98\% deliverability at 10,000+ subscriber scale.}
+
+\item \textbf{SEO Content \& Webflow Publishing Automation.} {End-to-end pipeline: vertical research → SEO long-form content generation → AI image generation → Webflow CMS publish. Zero manual steps. Scaled publishing from a few posts/week to daily automated output. Stack: n8n, OpenAI API, Webflow CMS API.}
+
+\item \textbf{AI Book Writing Agent.} {n8n agent that ingests raw transcripts, maps chapter structure, generates GPT-4 content with tone-consistent output, and exports a publication-ready manuscript. Compressed a months-long editorial process into hours.}
+
+\item \textbf{AI Book Recommendation Automation (aisr.qa).} {Automation querying a user database, running an AI-driven interview, and returning 8 personalised book recommendations per user role — zero human involvement. Stack: n8n, OpenAI API, Supabase.}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	OPEN SOURCE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Open Source \& Portfolio}
+\begin{itemize}
+    \item Built AI Motivation Letter Generator — 10 ATS-optimized letter variants per submission in under 60 seconds, exportable to PDF/Word. \href{https://motivation-letter-ai.vercel.app/}{(Live)}
+    \item Maintain 35+ public GitHub repositories including n8n workflow exports, RAG pipeline templates, and documented prompt engineering recipes. \href{https://github.com/levicap}{(github.com/levicap)}
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf Bachelor of Computer Science} \hfill {2021 -- 2024} \\
+Relevant Coursework: Algorithms \& Data Structures, Databases, Software Engineering, Machine Learning Fundamentals, Computer Networks.
+
+\end{rSection}
+
+\end{document}

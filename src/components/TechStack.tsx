@@ -21,6 +21,11 @@ const TECH_ICONS: Record<string, string> = {
   "LangChain":      "https://cdn.simpleicons.org/langchain/1C3C3C",
   "OpenAI":         "https://cdn.simpleicons.org/openai/FFFFFF",
   "ElevenLabs":     "https://cdn.simpleicons.org/elevenlabs/FFFFFF",
+  "Claude":         "https://cdn.simpleicons.org/anthropic/CC785C",
+  "Gemini":         "https://cdn.simpleicons.org/googlegemini/8E75B2",
+  "Make":           "https://cdn.simpleicons.org/make/6D00CC",
+  "HubSpot":        "https://cdn.simpleicons.org/hubspot/FF7A59",
+  "Apollo":         "https://cdn.simpleicons.org/apollo/3D6CE7",
   "PostgreSQL":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
   "MongoDB":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
   "Supabase":       "https://cdn.simpleicons.org/supabase/3ECF8E",
@@ -28,6 +33,11 @@ const TECH_ICONS: Record<string, string> = {
   "Vercel":         "https://cdn.simpleicons.org/vercel/FFFFFF",
   "GitHub Actions": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
 };
+
+// Icons using FFFFFF — need CSS inversion on light theme
+const MONO_ICONS = new Set([
+  "Next.js", "Express.js", "OpenAI", "ElevenLabs", "Vercel",
+]);
 
 function TechIcon({ name, category }: { name: string; category: string }) {
   const [failed, setFailed] = useState(false);
@@ -50,7 +60,7 @@ function TechIcon({ name, category }: { name: string; category: string }) {
       alt={name}
       width={16}
       height={16}
-      className="w-4 h-4 shrink-0 object-contain"
+      className={`w-4 h-4 shrink-0 object-contain${MONO_ICONS.has(name) ? " icon-mono" : ""}`}
       onError={() => setFailed(true)}
     />
   );

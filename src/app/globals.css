@@ -53,6 +53,10 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Monotone (white) icons need inversion on light theme */
+.icon-mono       { filter: brightness(0) invert(0.35); }
+.dark .icon-mono { filter: none; }
+
 body {
   background: var(--bg);
   color: var(--text);

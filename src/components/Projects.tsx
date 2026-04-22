@@ -29,6 +29,11 @@ const TECH_SLUG: Record<string, string> = {
   "Tailwind CSS":   "tailwindcss",
   "OpenAI API":     "openai",
   "Gemini API":     "googlegemini",
+  "Claude":         "anthropic",
+  "Claude Code":    "anthropic",
+  "Codex":          "openai",
+  "Cursor":         "cursor",
+  "Gemini":         "googlegemini",
   "n8n":            "n8n",
   "Twilio":         "twilio",
   "Webflow API":    "webflow",
@@ -207,12 +212,20 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
   );
 }
 
+const FULL_STACK_CATS = new Set(["AI Tool", "SaaS", "E-Commerce", "Portfolio", "Web App"]);
+const AUTOMATION_CATS  = new Set(["AI Automation", "Automation"]);
+
 export function Projects() {
-  const categories = ["All", ...Array.from(new Set(data.projects.map((p) => p.category)))];
   const [active, setActive] = useState("All");
 
   const filtered =
-    active === "All" ? data.projects : data.projects.filter((p) => p.category === active);
+    active === "All"
+      ? data.projects
+      : active === "Full Stack"
+      ? data.projects.filter((p) => FULL_STACK_CATS.has(p.category))
+      : data.projects.filter((p) => AUTOMATION_CATS.has(p.category));
+
+  const categories = ["All", "Full Stack", "Automation"];
 
   return (
     <section

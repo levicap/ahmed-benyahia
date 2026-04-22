@@ -277,4 +277,17 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     "Lead list building reduced from hours to seconds. Every captured Upwork listing is automatically enriched with verified contact data — enabling immediate, targeted outreach without any manual lookup or data entry."
   ),
+
+  "explodingleads-lead-signal-engine": cs(
+    "Sales teams waste hours manually scanning LinkedIn, Google alerts, and news sources for buying signals — new hires, office expansions, and job postings that indicate a company is in a growth phase and ready to buy. No automation existed to surface and qualify these signals at scale.",
+    "I built an automated signal detection pipeline using n8n that continuously monitors Google and RapidAPI LinkedIn for new hire announcements, new location openings, and strategic job postings. Each signal is passed through an AI qualification layer that scores relevance against defined ICP criteria — and only warm, qualified leads are delivered directly to Gmail for immediate outreach.",
+    [
+      "Google and RapidAPI LinkedIn signal monitoring for new hires, locations, and job postings",
+      "AI-powered ICP qualification layer scoring each signal against defined criteria",
+      "Automated filtering to eliminate noise and surface only high-intent leads",
+      "Enriched lead records with context on the trigger signal",
+      "Direct Gmail delivery of qualified leads ready for outreach",
+    ],
+    "The pipeline surfaces warm, signal-triggered leads on autopilot — eliminating manual prospecting entirely. Sales teams wake up to a Gmail inbox filled with qualified, context-rich leads that have already shown a buying signal, compressing the prospecting cycle from days to minutes."
+  ),
 };

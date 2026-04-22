@@ -9,14 +9,14 @@ export const data: PortfolioData = {
     "Full Stack Developer",
     "LLM Pipeline Builder",
   ],
-  bio: "Full stack & automation engineer with 2+ years building production AI systems, RAG pipelines, and n8n workflows for SaaS, e-commerce, and B2B clients — 15+ projects delivered across international clients.",
+  bio: "I build the systems that save your team 15+ hours a week — RAG pipelines, AI agents, and n8n automations that run on autopilot so you scale without hiring. 21+ projects delivered for international clients across SaaS, e-commerce, and B2B.",
   availability: true,
 
   stats: [
-    { value: "15+",  label: "Projects Delivered" },
+    { value: "21+",  label: "Projects Delivered" },
     { value: "10+",  label: "Happy Clients" },
     { value: "2+",   label: "Years Experience" },
-    { value: "100%", label: "On-Time Delivery" },
+    { value: "98%",  label: "On-Time Delivery" },
   ],
 
   platforms: [
@@ -105,7 +105,7 @@ export const data: PortfolioData = {
       step: 2,
       title: "Proposal & Scope",
       description:
-        "You receive a detailed technical proposal with timeline, deliverables, and fixed pricing — no surprises.",
+        "You receive a detailed technical proposal with timeline, deliverables, and a clear price range — no surprises.",
       badge: "Day 2–3",
     },
     {
@@ -113,7 +113,7 @@ export const data: PortfolioData = {
       title: "Design & Build",
       description:
         "I build iteratively with weekly updates, shipping working modules so you see progress continuously.",
-      badge: "Week 1–N",
+      badge: "1–3 Weeks",
     },
     {
       step: 4,
@@ -134,12 +134,16 @@ export const data: PortfolioData = {
     { name: "Node.js",       category: "backend"    },
     { name: "Express.js",    category: "backend"    },
     { name: "Nest.js",       category: "backend"    },
-    { name: "Spring Boot",   category: "backend"    },
     { name: "n8n",           category: "automation" },
     { name: "Zapier",        category: "automation" },
     { name: "LangChain",     category: "ai"         },
     { name: "OpenAI",        category: "ai"         },
     { name: "ElevenLabs",    category: "ai"         },
+    { name: "Claude",        category: "ai"         },
+    { name: "Gemini",        category: "ai"         },
+    { name: "Make",          category: "automation" },
+    { name: "HubSpot",       category: "automation" },
+    { name: "Apollo",        category: "automation" },
     { name: "PostgreSQL",    category: "database"   },
     { name: "MongoDB",       category: "database"   },
     { name: "Supabase",      category: "database"   },
@@ -199,16 +203,7 @@ export const data: PortfolioData = {
       liveUrl: "https://scenewear-ecommerce.vercel.app/",
       githubUrl: "https://github.com/levicap/scenewear-ecommerce",
     },
-    {
-      title: "VS Code Portfolio",
-      description:
-        "Creative developer portfolio styled as a VS Code editor with interactive file explorer, syntax highlighting, and terminal simulation.",
-      thumbnail: "/vscodepor.png",
-      tags: ["Next.js", "TypeScript", "CSS Animations"],
-      category: "Portfolio",
-      liveUrl: "https://portfolio-eight-gold-99.vercel.app/",
-      githubUrl: "https://github.com/levicap/vs-code-protfolio-",
-    },
+
     {
       title: "MiniSport Internal RAG Assistant",
       description:
@@ -349,6 +344,16 @@ export const data: PortfolioData = {
       liveUrl: "",
       githubUrl: "",
     },
+    {
+      title: "ExplodingLeads — Lead Signal Engine",
+      description:
+        "Automated lead signal pipeline that monitors Google and RapidAPI LinkedIn for new hire, new location, and new job signals — filters them through AI qualification criteria and delivers only warm, ready-to-contact leads directly to Gmail.",
+      thumbnail: "/leadssignals.png",
+      tags: ["n8n", "Google API", "RapidAPI", "OpenAI API", "Gmail", "LinkedIn"],
+      category: "AI Automation",
+      liveUrl: "",
+      githubUrl: "",
+    },
   ],
 
   experience: [
@@ -421,34 +426,34 @@ export const data: PortfolioData = {
       photo: "",
       project: "BookieLink Support Bot",
       review:
-        "Ahmed built us a RAG-powered support chatbot that handles the majority of our customer queries without any human involvement. Support tickets dropped by 70% in the first month alone. Exceptional work.",
+        "Honestly didn't think a chatbot could handle our support volume without constant babysitting. Ours now runs on its own — tickets dropped by 70% in the first month. The handoff was clean, documentation was solid, and I haven't had to touch it since.",
       rating: 5,
       platform: "Direct",
     },
     {
-      name: "Kevin T.",
-      photo: "",
+      name: "Matthew K.",
+      photo: "/matthew-minisport.jpg",
       project: "MiniSport Internal Assistant",
       review:
-        "We needed an internal tool our team could query in plain English. Ahmed delivered a production-ready RAG system in under two weeks — clean, well-documented, and it just works. Highly recommend.",
+        "Ahmed was exactly the kind of person you want on a project like this — he understood what we needed before we finished explaining it. The assistant went from nothing to deployed in under two weeks. Team adopted it immediately.",
       rating: 5,
       platform: "Direct",
     },
     {
-      name: "Sarah M.",
-      photo: "",
+      name: "David A.",
+      photo: "/david-iprint.jpg",
       project: "iPrint AI Voice & Chat Agent",
       review:
-        "Our support volume was overwhelming. Ahmed integrated an AI voice and chat agent that now handles 500+ queries daily with Stripe payments baked in. Response time improved by 45%. Absolutely stellar.",
+        "We were drowning in support requests. The system handles 500+ queries a day — chat and voice — with Stripe payments running inside the same conversation. I was skeptical it would hold up, but it's been running without issues. Response time is up 45%.",
       rating: 5,
       platform: "Direct",
     },
     {
-      name: "Lina B.",
-      photo: "",
+      name: "Carlos M.",
+      photo: "/carlos-olalahomes.jpg",
       project: "OlalaHomes Property Dashboard",
       review:
-        "Ahmed took our fragmented spreadsheets and built a beautiful, fully-functional property management dashboard from scratch. The occupancy and revenue tracking now saves us hours every week.",
+        "Ahmed delivered something we'd been putting off for months. Clean dashboard, real data, no spreadsheets. Occupancy and revenue across all properties in one place. Good communication throughout, no surprises on delivery.",
       rating: 5,
       platform: "Direct",
     },
@@ -457,28 +462,29 @@ export const data: PortfolioData = {
       photo: "",
       project: "Lead Acquisition Automation",
       review:
-        "The lead pipeline Ahmed built pulls qualified prospects from multiple sources, enriches them, and drops them straight into our CRM — fully automated. We cut manual screening time by 80%. Worth every penny.",
+        "Our sourcing used to be 80% manual work. Now leads come in enriched, scored, and ready to contact — straight into the CRM. The pipeline runs on its own. I haven't thought about it since it launched, which is exactly how it should be.",
       rating: 5,
       platform: "Direct",
     },
     {
-      name: "David K.",
-      photo: "",
+      name: "Roman T.",
+      photo: "/roman-techfore.jpg",
       project: "TechForce Developer Sourcing Pipeline",
       review:
-        "Ahmed automated our entire developer sourcing workflow. We went from hours of manual GitHub searching to having warm, enriched profiles delivered automatically into Gospott. Game-changer for our recruiting ops.",
+        "Finding developers by location was taking our team hours. Now we get warm, enriched profiles in Gospott without lifting a finger. Ahmed was a rockstar on this — fast, no back-and-forth, just shipped.",
       rating: 5,
       platform: "Direct",
     },
     {
-      name: "Client Testimonial",
-      photo: "",
-      project: "AI Automation System",
+      name: "David L.",
+      photo: "/david-exploding%20leads.png",
+      project: "ExplodingLeads — Lead Signal Engine",
       review:
-        "Ahmed delivered an exceptional RAG system that completely transformed our customer support pipeline. Clear communication, on-time delivery, and the results speak for themselves.",
+        "What got me was the signal filtering — it's not just scraping, it's actually qualifying. We get notified when a company hires a new ops role or opens a new location, and those leads land in Gmail ready to contact. Completely changed how we do outbound.",
       rating: 5,
       platform: "Direct",
     },
+
   ],
 
   guarantee: [
@@ -506,7 +512,7 @@ export const data: PortfolioData = {
     upwork:   "https://www.upwork.com/freelancers/ahmedbenyahia",
     linkedin: "https://linkedin.com/in/ahmedbenyahia",
     whatsapp: "https://wa.me/21650193344",
-    calendly: "https://calendly.com/ahmedbenyahia654/30min",
+    calendly: "https://calendly.com/ahmedbenyahia654/30min?hide_gdpr_banner=1&timezone=Africa%2FTunis",
     github:   "https://github.com/levicap",
     email:    "mailto:ahmedbenyahia654@gmail.com",
   },
