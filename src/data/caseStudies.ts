@@ -278,6 +278,62 @@ export const caseStudies: Record<string, CaseStudy> = {
     "Lead list building reduced from hours to seconds. Every captured Upwork listing is automatically enriched with verified contact data — enabling immediate, targeted outreach without any manual lookup or data entry."
   ),
 
+  "strategy-navigator-ai-saas-platform": cs(
+    "Strategy teams were operating across a fragmented stack — slides in one place, spreadsheets in another, OKRs tracked in a third tool nobody kept updated. There was no single workspace where strategy could live, evolve, and be acted on. Every review cycle meant chasing status updates manually.",
+    "I built a multi-tenant SaaS platform where strategy teams can plan, track, and adapt their work in one place. The platform includes role-based access control so each team member sees exactly what's relevant to them, AI assistants that surface insights and draft strategic content on demand, a billing integration to support subscription tiers, and an analytics layer that tracks progress across goals and initiatives.",
+    [
+      "Multi-tenant architecture with full team and workspace isolation",
+      "RBAC with granular permission levels across roles",
+      "AI assistant integration for strategy drafting and insight generation",
+      "Analytics dashboard tracking OKRs, milestones, and initiative health",
+      "Stripe billing integration supporting tiered subscription plans",
+      "React frontend with Node.js backend and OpenAI API",
+    ],
+    "The platform shipped to production with active users running real strategy cycles through it. API throughput was optimized to handle concurrent team workloads without degradation. Teams replaced their fragmented tool stack with a single, structured workspace — and the AI layer cut the time spent writing strategy documents by a meaningful margin."
+  ),
+
+  "journeyai-ai-sales-assistant-platform": cs(
+    "Sales reps were losing hours every week on work that happened around the meeting — not in it. Preparing context before a call, writing summaries after, drafting follow-up emails, logging notes to the CRM. None of it was the actual selling. It was overhead that compounded across every rep on the team.",
+    "I built JourneyAI as a suite of AI assistants purpose-built for the sales workflow. Before a call, the platform surfaces prospect context and generates a tailored prep brief. After the call, it produces a structured summary with key takeaways. Follow-up emails are drafted automatically and ready to send with a single edit. All of this runs in real time with WebSocket connections keeping the experience live and responsive.",
+    [
+      "AI-powered meeting prep briefs with prospect and deal context",
+      "Automated post-call summaries with structured key takeaways",
+      "Follow-up email generation tailored to each conversation",
+      "Real-time capabilities via WebSocket for live assistant interactions",
+      "Next.js frontend with Node.js backend and OpenAI API",
+      "Deployed to production with active sales teams using it daily",
+    ],
+    "JourneyAI is live and being used in production sales workflows. Reps spend less time on administrative overhead and more time on actual conversations. The assistant suite handled the full pre-to-post meeting cycle — making it one of the more complete AI tools I've shipped for this use case."
+  ),
+
+  "saleside-ai-sales-meeting-assistant": cs(
+    "Sales teams were walking out of meetings with scattered notes, forgotten objections, and follow-up actions that never got tracked. The knowledge from a good sales call — what the prospect cared about, what they pushed back on, what was agreed — was living in someone's head or a half-filled notes doc. Most of it was lost within 24 hours.",
+    "I built SaleSide AI to capture and structure everything that matters in a sales meeting. The platform handles automated transcription so nothing goes unrecorded, flags and categorises objections as they happen, generates an AI summary at the end of each session, and extracts concrete action items with clear ownership. The result is a complete, structured record of every meeting that's immediately useful without any manual effort.",
+    [
+      "Automated meeting transcription with full session capture",
+      "Real-time objection detection and categorisation",
+      "AI-generated meeting summaries with structured key points",
+      "Action item extraction with assignee and deadline identification",
+      "WebSocket-powered real-time processing during live calls",
+      "Next.js frontend, Node.js backend, OpenAI API",
+    ],
+    "Follow-up consistency improved measurably — action items extracted by the platform were being acted on rather than forgotten. Manual note-taking was eliminated entirely. Sales teams now have a searchable, structured record of every customer conversation, which also feeds into coaching and deal review workflows."
+  ),
+
+  "edunova-lms-with-ai-websocket": cs(
+    "The e-learning platform was losing learners to static content and slow feedback loops. Students worked through material alone, had no way to get instant answers to questions, and couldn't collaborate with peers in real time. Completion rates were suffering and the platform was difficult to differentiate in a crowded market.",
+    "I built EduNova as a full learning management platform with two capabilities that directly addressed the engagement problem: an AI chatbot available throughout every course to answer questions and explain concepts on demand, and real-time WebSocket communication that enables live collaboration between learners and instructors. The platform manages course structure, progress tracking, and content delivery as the foundation.",
+    [
+      "Full LMS with course management, progress tracking, and content delivery",
+      "AI chatbot integrated per-course for instant on-demand support",
+      "Real-time learner-instructor communication via WebSocket",
+      "Live collaboration features for group learning and Q&A sessions",
+      "Scalable architecture supporting concurrent active users",
+      "Next.js frontend, Node.js backend, OpenAI API, WebSocket",
+    ],
+    "EduNova shipped to production and is live at scale. The combination of AI support and real-time collaboration addressed both the isolation and feedback-speed problems that were driving disengagement. The platform is genuinely differentiated — learners have access to instant help at any point in the course, and the live features make the experience feel more like a classroom than a video library."
+  ),
+
   "explodingleads-lead-signal-engine": cs(
     "Sales teams waste hours manually scanning LinkedIn, Google alerts, and news sources for buying signals — new hires, office expansions, and job postings that indicate a company is in a growth phase and ready to buy. No automation existed to surface and qualify these signals at scale.",
     "I built an automated signal detection pipeline using n8n that continuously monitors Google and RapidAPI LinkedIn for new hire announcements, new location openings, and strategic job postings. Each signal is passed through an AI qualification layer that scores relevance against defined ICP criteria — and only warm, qualified leads are delivered directly to Gmail for immediate outreach.",

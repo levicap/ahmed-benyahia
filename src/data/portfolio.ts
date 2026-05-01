@@ -291,7 +291,7 @@ export const data: PortfolioData = {
       thumbnail: "/ghanemlabs.png",
       tags: ["Next.js", "Node.js", "Web3", "OpenAI API", "TypeScript"],
       category: "SaaS",
-      liveUrl: "",
+      liveUrl: "https://www.ghanemlab.com/",
       githubUrl: "",
     },
     {
@@ -301,7 +301,7 @@ export const data: PortfolioData = {
       thumbnail: "/outreach.png",
       tags: ["Next.js", "PostgreSQL", "LinkedIn API", "OpenAI API"],
       category: "SaaS",
-      liveUrl: "",
+      liveUrl: "https://leanorchestr.com/",
       githubUrl: "",
     },
     {
@@ -342,6 +342,46 @@ export const data: PortfolioData = {
       tags: ["Chrome Extension", "n8n", "FindMyEmail", "Apollo API", "Web Scraping"],
       category: "AI Automation",
       liveUrl: "",
+      githubUrl: "",
+    },
+    {
+      title: "Strategy Navigator — AI SaaS Platform",
+      description:
+        "Multi-tenant strategy platform with RBAC, AI assistants, analytics, and billing integrations — built for teams managing disconnected strategy workflows.",
+      thumbnail: "/strategy-saas.png",
+      tags: ["React", "Node.js", "OpenAI API", "TypeScript"],
+      category: "SaaS",
+      liveUrl: "https://strategynavigator.ai/",
+      githubUrl: "",
+    },
+    {
+      title: "JourneyAI — AI Sales Assistant Platform",
+      description:
+        "AI-powered suite for sales teams covering meeting prep, automated summaries, and follow-up generation with real-time capabilities — deployed in production workflows.",
+      thumbnail: "/journeyai-saas.png",
+      tags: ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
+      category: "SaaS",
+      liveUrl: "https://meetjourney.ai/",
+      githubUrl: "",
+    },
+    {
+      title: "SaleSide AI — Sales Meeting Assistant",
+      description:
+        "Automated meeting intelligence platform with transcription, objection tracking, AI summaries, and action item extraction — eliminating manual note-taking.",
+      thumbnail: "/salesside-saas.png",
+      tags: ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
+      category: "SaaS",
+      liveUrl: "https://saleside.ai/",
+      githubUrl: "",
+    },
+    {
+      title: "EduNova — LMS with AI & WebSocket",
+      description:
+        "Learning management platform with AI chatbot support and real-time WebSocket communication — delivering scalable e-learning with live collaboration features.",
+      thumbnail: "/edunova-lms.png",
+      tags: ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
+      category: "SaaS",
+      liveUrl: "https://e-learning-five-tau.vercel.app/",
       githubUrl: "",
     },
     {
