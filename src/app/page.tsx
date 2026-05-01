@@ -8,7 +8,6 @@ import { Process } from "@/components/Process";
 import { TechStack } from "@/components/TechStack";
 import { Testimonials } from "@/components/Testimonials";
 import { Guarantee } from "@/components/Guarantee";
-import { Pricing } from "@/components/Pricing";
 import { FAQ } from "@/components/FAQ";
 import { Booking } from "@/components/Booking";
 import { Footer } from "@/components/Footer";
@@ -28,7 +27,6 @@ export default function Home() {
         <TechStack />
         <Testimonials />
         <Guarantee />
-        <Pricing />
         <FAQ />
         <Booking />
       </main>
