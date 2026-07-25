@@ -65,6 +65,9 @@ export interface Project {
   category: string;
   liveUrl: string;
   githubUrl: string;
+  featured?: boolean;
+  resultLabel?: string;
+  bestFor?: string;
 }
 
 export interface Experience {

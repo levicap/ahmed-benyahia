@@ -12,6 +12,7 @@ const TECH_ICONS: Record<string, string> = {
   "TypeScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
   "Python":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
   "JavaScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+  "Electron.js":    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg",
   "Node.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
   "Express.js":     "https://cdn.simpleicons.org/express/FFFFFF",
   "Nest.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
@@ -28,6 +29,7 @@ const TECH_ICONS: Record<string, string> = {
   "Apollo":         "https://cdn.simpleicons.org/apollo/3D6CE7",
   "PostgreSQL":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
   "MongoDB":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+  "SQLite":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
   "Supabase":       "https://cdn.simpleicons.org/supabase/3ECF8E",
   "Docker":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
   "Vercel":         "https://cdn.simpleicons.org/vercel/FFFFFF",
@@ -68,6 +70,7 @@ function TechIcon({ name, category }: { name: string; category: string }) {
 
 const CAT_COLORS: Record<string, string> = {
   frontend: "#3b82f6",
+  desktop:  "#47848f",
   backend:  "#8b5cf6",
   language: "#f59e0b",
   styling:  "#ec4899",
@@ -87,6 +90,22 @@ const CAT_COLORS: Record<string, string> = {
   testing:  "#fb7185",
   validation:"#67e8f9",
 };
+
+function hexToRgba(hex: string, alpha: number): string {
+  const value = hex.replace("#", "");
+  const normalized =
+    value.length === 3
+      ? value
+          .split("")
+          .map((char) => char + char)
+          .join("")
+      : value;
+  const num = parseInt(normalized, 16);
+  const r = (num >> 16) & 255;
+  const g = (num >> 8) & 255;
+  const b = num & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 
 function StackRow({
   items,
@@ -116,17 +135,28 @@ function StackRow({
         }}
       >
         {doubled.map((t, i) => {
+          const color = CAT_COLORS[t.category] ?? "#10b981";
+
           return (
             <div
               key={i}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border whitespace-nowrap text-sm font-semibold transition-all duration-200 cursor-default hover:scale-105"
+              className="inline-flex cursor-default items-center gap-2.5 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-semibold transition-all duration-200 hover:scale-105"
               style={{
-                background: "var(--surface)",
-                borderColor: "var(--border)",
+                background: `linear-gradient(135deg, ${hexToRgba(color, 0.16)}, var(--surface))`,
+                borderColor: hexToRgba(color, 0.34),
+                boxShadow: `0 8px 24px ${hexToRgba(color, 0.07)}`,
                 color: "var(--text-muted)",
               }}
             >
-              <TechIcon name={t.name} category={t.category} />
+              <span
+                className="grid h-7 w-7 shrink-0 place-items-center rounded-full border"
+                style={{
+                  background: hexToRgba(color, 0.14),
+                  borderColor: hexToRgba(color, 0.28),
+                }}
+              >
+                <TechIcon name={t.name} category={t.category} />
+              </span>
               {t.name}
             </div>
           );

@@ -346,4 +346,83 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     "The pipeline surfaces warm, signal-triggered leads on autopilot — eliminating manual prospecting entirely. Sales teams wake up to a Gmail inbox filled with qualified, context-rich leads that have already shown a buying signal, compressing the prospecting cycle from days to minutes."
   ),
+
+  "invoice-parsing-kpi-reporting-dashboard": cs(
+    "The client was receiving invoice data in inconsistent formats and had no reliable way to normalize records, sync the approved version into Airtable, or understand invoice activity and KPI trends from one dashboard.",
+    "I built a Next.js dashboard backed by Supabase that parses incoming invoices, converts them into a unified schema, saves the normalized output to Airtable, and presents operational metrics through Recharts visualizations.",
+    [
+      "Invoice parsing flow that standardizes inconsistent source formats",
+      "Unified invoice schema stored and synced across Supabase and Airtable",
+      "Airtable integration for client-facing record management",
+      "KPI dashboard with Recharts charts and summary metrics",
+      "Next.js interface for reviewing parsed invoice data before handoff",
+    ],
+    "The client gained a single workflow for turning messy invoice inputs into clean, Airtable-ready records. Manual formatting work was removed, and KPI visibility moved from scattered checks to one reporting dashboard."
+  ),
+
+  "gantic-to-spott-crm-migration-sync": cs(
+    "A client was moving candidate operations from Gantic CRM to Spott CRM and needed to keep candidate records moving into the new system without relying on manual export, cleanup, and re-entry during the migration window.",
+    "I built an automation that reads candidate data from Gantic CRM, maps the fields into Spott's expected structure, deduplicates records, and syncs qualified candidate information into Spott CRM with controlled error handling.",
+    [
+      "Candidate sync from Gantic CRM into Spott CRM",
+      "Field mapping between old and new CRM data models",
+      "Deduplication checks to avoid duplicated candidate records",
+      "Automated migration workflow with retry-safe handoff",
+      "Operational logging for sync visibility during the CRM transition",
+    ],
+    "The migration workflow kept candidate data flowing into the new CRM without manual copy-paste. The client could move teams onto Spott while preserving source data quality and reducing migration overhead."
+  ),
+
+  "asana-board-daily-update-digest": cs(
+    "The client needed a reliable way to understand what changed across Asana boards without manually checking every task, comment, status update, and assignment each morning.",
+    "I built an automation that monitors Asana boards for task updates, summarizes the meaningful changes, and sends a daily morning email digest that highlights what moved, what needs attention, and where follow-up is required.",
+    [
+      "Asana board monitoring for task and status changes",
+      "AI-generated daily summary of meaningful updates",
+      "Morning email delivery to the client team",
+      "Filtering logic to reduce noise from low-value changes",
+      "Reusable workflow for multiple boards and workstreams",
+    ],
+    "The team now receives a concise operational digest each morning instead of reviewing boards manually. Stakeholders stay aligned on task movement, blockers, and follow-ups without adding another reporting habit."
+  ),
+
+  "meeting-transcript-to-asana-workflow": cs(
+    "Meeting decisions and action items were being lost between calls and project execution. The client needed tasks from meeting transcripts to appear in Asana with enough structure for the team to act on them.",
+    "I built a meeting transcript workflow that extracts tasks, owners, and follow-up items from transcripts, then updates the relevant Asana boards so work created in meetings becomes trackable execution automatically.",
+    [
+      "Transcript ingestion and preprocessing workflow",
+      "Task and action-item extraction with AI assistance",
+      "Owner and context detection from meeting language",
+      "Asana board updates with structured task records",
+      "Workflow pairing with the client's daily Asana digest automation",
+    ],
+    "The client closed the gap between meeting notes and project management. Action items now land in Asana automatically, making meetings easier to operationalize and reducing missed follow-through."
+  ),
+
+  "workforce-second-brain-automation-layer": cs(
+    "Workforce needed a controlled company-memory system that could capture useful operational signals from meetings, review flows, candidate communication, and CRM activity without letting unapproved or sensitive raw data become durable knowledge.",
+    "I built a Workforce Second Brain automation layer connecting Fathom meeting intelligence, Slack review and approval flows, WhatsApp/Spott candidate communication, and a Git-backed Workforce vault. Approved signals are sanitized into Markdown knowledge, while source systems remain authoritative.",
+    [
+      "Fathom meeting intelligence ingestion and signal extraction",
+      "Slack interactivity for review and approval before durable updates",
+      "WhatsApp and Spott candidate communication integration",
+      "Sanitized Markdown knowledge generation for the Workforce vault",
+      "Git/GitHub PR workflow for controlled company-memory changes",
+      "Services built with Next.js, Node.js, Go, Docker, SQLite, n8n, and Gemini",
+    ],
+    "The company gained a governed second-brain layer instead of an uncontrolled data dump. Durable knowledge updates now pass through review, source systems stay authoritative, and approved operational context becomes searchable Markdown in the Git-backed vault."
+  ),
+
+  "finoria-erp": cs(
+    "The business needed one desktop system to manage sales, purchases, stock, and payments instead of splitting daily operations across spreadsheets and disconnected records.",
+    "I built Finoria as a local desktop ERP using Electron.js and SQLite, giving the team a single application for commercial workflows, inventory movement, purchase tracking, and payment records.",
+    [
+      "Sales management for customer transactions and commercial records",
+      "Purchase management for supplier-side operations",
+      "Stock management with local inventory tracking",
+      "Payment management for operational cash-flow records",
+      "Electron.js desktop app backed by a local SQLite database",
+    ],
+    "Finoria centralizes core business operations into one desktop workflow. The team can manage sales, purchases, stock, and payments locally without relying on scattered files or manual reconciliation."
+  ),
 };

@@ -9,11 +9,11 @@ export const data: PortfolioData = {
     "Full Stack Developer",
     "LLM Pipeline Builder",
   ],
-  bio: "I build the systems that save your team 15+ hours a week — RAG pipelines, AI agents, and n8n automations that run on autopilot so you scale without hiring. 21+ projects delivered for international clients across SaaS, e-commerce, and B2B.",
+  bio: "I build the systems that save your team 15+ hours a week — RAG pipelines, AI agents, and n8n automations that run on autopilot so you scale without hiring. 27+ projects delivered for international clients across SaaS, e-commerce, and B2B.",
   availability: true,
 
   stats: [
-    { value: "21+",  label: "Projects Delivered" },
+    { value: "27+",  label: "Projects Delivered" },
     { value: "10+",  label: "Happy Clients" },
     { value: "2+",   label: "Years Experience" },
     { value: "98%",  label: "On-Time Delivery" },
@@ -131,6 +131,7 @@ export const data: PortfolioData = {
     { name: "TypeScript",    category: "language"   },
     { name: "Python",        category: "language"   },
     { name: "JavaScript",    category: "language"   },
+    { name: "Electron.js",   category: "desktop"    },
     { name: "Node.js",       category: "backend"    },
     { name: "Express.js",    category: "backend"    },
     { name: "Nest.js",       category: "backend"    },
@@ -146,6 +147,7 @@ export const data: PortfolioData = {
     { name: "Apollo",        category: "automation" },
     { name: "PostgreSQL",    category: "database"   },
     { name: "MongoDB",       category: "database"   },
+    { name: "SQLite",        category: "database"   },
     { name: "Supabase",      category: "database"   },
     { name: "Docker",        category: "devops"     },
     { name: "Vercel",        category: "devops"     },
@@ -154,9 +156,85 @@ export const data: PortfolioData = {
 
   projects: [
     {
+      title: "Invoice Parsing & KPI Reporting Dashboard",
+      description:
+        "A finance operations dashboard that turns messy invoice inputs into one clean, Airtable-ready format. It combines parsing, Supabase storage, Airtable sync, and Recharts KPIs so teams can review invoice flow and reporting from one place.",
+      thumbnail: "/reporting%20.png",
+      tags: ["Next.js", "Supabase", "Airtable API", "Recharts", "TypeScript"],
+      category: "SaaS",
+      liveUrl: "",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "Invoice Ops Dashboard",
+      bestFor: "Finance teams replacing manual invoice cleanup",
+    },
+    {
+      title: "Workforce Second Brain Automation Layer",
+      description:
+        "A controlled company-memory layer for Workforce that connects meetings, Slack approvals, WhatsApp/Spott communication, and a Git-backed knowledge vault. It turns approved operational signals into sanitized Markdown knowledge while keeping source systems authoritative.",
+      thumbnail: "/second%20brain%20workforce.png",
+      tags: ["Next.js", "Node.js", "Go", "Docker", "SQLite", "n8n", "Fathom API", "Slack API", "GitHub API", "Spott API", "WhatsApp", "Gemini API"],
+      category: "AI Automation",
+      liveUrl: "",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "Controlled Knowledge Vault",
+      bestFor: "Operations teams that need reviewed company memory",
+    },
+    {
+      title: "Finoria ERP",
+      description:
+        "A desktop ERP that gives small businesses one local system for sales, purchases, stock, and payment tracking. Built with Electron.js and SQLite so teams can run daily operations reliably without spreadsheets or internet-dependent tools.",
+      thumbnail: "/finoria.png",
+      tags: ["Electron.js", "SQLite", "JavaScript", "ERP", "Desktop App"],
+      category: "Desktop App",
+      liveUrl: "",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "Offline Desktop ERP",
+      bestFor: "Small businesses managing core operations locally",
+    },
+    {
+      title: "Gantic to Spott CRM Migration Sync",
+      description:
+        "A CRM migration automation that keeps candidate records moving from Gantic into Spott without manual exports. The workflow maps fields, avoids duplicate records, and protects recruiting operations while the client moves to a new CRM.",
+      thumbnail: "/gantictospottcrm.png",
+      tags: ["n8n", "Gantic CRM", "Spott API", "CRM Automation", "Webhooks"],
+      category: "Automation",
+      liveUrl: "",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "CRM Migration",
+      bestFor: "Recruiting teams moving between CRMs",
+    },
+    {
+      title: "Meeting Transcript to Asana Workflow",
+      description:
+        "A meeting-to-execution workflow that converts transcript notes into structured Asana tasks. It extracts action items, owners, and context so decisions made in meetings become trackable work instead of forgotten notes.",
+      thumbnail: "/meeting%20transcipt%20.png",
+      tags: ["n8n", "Asana API", "OpenAI API", "Transcription", "Webhooks"],
+      category: "AI Automation",
+      liveUrl: "",
+      githubUrl: "",
+      resultLabel: "Meeting to Tasks",
+      bestFor: "Teams turning calls into accountable execution",
+    },
+    {
+      title: "Asana Board Daily Update Digest",
+      description:
+        "A daily operations digest for Asana boards that turns task changes into a clear morning summary. It helps the client see what moved, what is blocked, and where follow-up is needed without manually checking every board.",
+      thumbnail: "/asana%20board.png",
+      tags: ["n8n", "Asana API", "OpenAI API", "Gmail", "Webhooks"],
+      category: "AI Automation",
+      liveUrl: "",
+      githubUrl: "",
+      resultLabel: "Daily Ops Digest",
+      bestFor: "Managers who need Asana visibility without board checking",
+    },
+    {
       title: "AI Career Path Mapper",
       description:
-        "AI-powered platform that generates personalized career roadmaps with skill gap analysis and learning paths based on current role and target career goal.",
+        "An AI career planning platform that turns a user's current role and target job into a practical roadmap. It identifies skill gaps, recommends learning paths, and gives job seekers a structured plan instead of generic career advice.",
       thumbnail: "/carrer.png",
       tags: ["Next.js", "Express.js", "Gemini API", "TypeScript"],
       category: "AI Tool",
@@ -166,7 +244,7 @@ export const data: PortfolioData = {
     {
       title: "AI Motivation Letter Generator",
       description:
-        "Generates 10 ATS-optimized motivation letter templates customized to role, company, and position — exportable to PDF/Word.",
+        "A job application tool that generates 10 tailored, ATS-friendly motivation letters for a specific company and role. It saves applicants hours of writing while giving them polished PDF/Word-ready options.",
       thumbnail: "/motivation.png",
       tags: ["Next.js", "Express.js", "Gemini API", "TypeScript"],
       category: "AI Tool",
@@ -176,7 +254,7 @@ export const data: PortfolioData = {
     {
       title: "Postily – AI Social Media Platform",
       description:
-        "SaaS platform to create, schedule, and manage social media posts with AI-generated captions, images, and a full analytics dashboard.",
+        "A social media SaaS that helps teams create, schedule, and analyze posts from one workspace. AI captions, image generation, campaign planning, and analytics reduce the manual work behind consistent publishing.",
       thumbnail: "/postily.png",
       tags: ["Next.js", "MongoDB", "OpenAI API"],
       category: "SaaS",
@@ -186,7 +264,7 @@ export const data: PortfolioData = {
     {
       title: "APIspark – Drag & Drop API Builder",
       description:
-        "Visual SaaS platform to build production APIs using drag-and-drop components with AI-assisted code generation and automatic documentation.",
+        "A visual API builder that lets developers design backend flows with drag-and-drop blocks, AI-generated code, and automatic documentation. It shortens the repetitive setup phase before real business logic begins.",
       thumbnail: "/apisparkp.png",
       tags: ["Next.js", "Node.js", "Prisma", "AI"],
       category: "SaaS",
@@ -196,7 +274,7 @@ export const data: PortfolioData = {
     {
       title: "Scenewear E-Commerce",
       description:
-        "Full-featured online store for a local clothing brand with product catalog, shopping cart, and order management built on Next.js and Spring Boot.",
+        "A full e-commerce platform for a local clothing brand, covering catalog browsing, cart flow, and order management. It moved the business from manual social-media orders into a scalable online storefront.",
       thumbnail: "/scenewear.png",
       tags: ["Next.js", "Spring Boot", "PostgreSQL"],
       category: "E-Commerce",
@@ -207,7 +285,7 @@ export const data: PortfolioData = {
     {
       title: "MiniSport Internal RAG Assistant",
       description:
-        "Internal AI assistant for MiniSport team to query company documentation using natural language, reducing support queries by 60%.",
+        "An internal RAG assistant that lets the MiniSport team ask questions across company documentation in natural language. It reduces time spent searching docs and gives staff faster, more consistent answers.",
       thumbnail: "/minisport-rag.png",
       tags: ["n8n", "OpenAI API", "Vector Database", "Webhooks"],
       category: "AI Automation",
@@ -217,7 +295,7 @@ export const data: PortfolioData = {
     {
       title: "BookieLink Customer Support Bot",
       description:
-        "RAG-powered customer support chatbot trained on 5K+ Q&A pairs, achieving 85% accuracy and reducing support tickets by 70%.",
+        "A RAG-powered support bot trained on thousands of BookieLink Q&A records. It handles repetitive customer questions automatically, reduces support tickets, and frees the team for higher-value cases.",
       thumbnail: "/bookilink-bot.png",
       tags: ["n8n", "OpenAI API", "Vector Database", "Webhooks"],
       category: "AI Automation",
@@ -227,7 +305,7 @@ export const data: PortfolioData = {
     {
       title: "iPrint AI Voice & Chat Support Agent",
       description:
-        "Human-like AI support system combining chat and voice via ElevenLabs and Twilio, handling 500+ daily queries with integrated Stripe payments.",
+        "A combined chat and voice support agent for iPrint using ElevenLabs, Twilio, and payment integrations. It handles high-volume customer requests, improves response speed, and keeps sales/support actions inside one conversation.",
       thumbnail: "/iprint-chatbot.png",
       tags: ["n8n", "ElevenLabs", "Twilio", "OpenAI API"],
       category: "AI Automation",
@@ -237,7 +315,7 @@ export const data: PortfolioData = {
     {
       title: "Lead Acquisition System",
       description:
-        "Automated pipeline that scrapes, enriches, qualifies, and inserts leads into CRM-ready format from Upwork, GitHub, and Indeed, reducing screening time by 80%.",
+        "A lead acquisition pipeline that scrapes, enriches, qualifies, and formats prospects from Upwork, GitHub, and Indeed. It gives sales/recruiting teams CRM-ready records instead of hours of manual sourcing.",
       thumbnail: "/leads.png",
       tags: ["n8n", "Web Scraping", "Apollo API", "LLM"],
       category: "AI Automation",
@@ -247,7 +325,7 @@ export const data: PortfolioData = {
     {
       title: "Tonic SMS Automation System",
       description:
-        "SMS campaign automation platform using Kit.com and Twilio to deliver targeted messages to 10K+ subscribers with 98% deliverability.",
+        "A campaign automation system that connects Kit.com and Twilio to send targeted SMS at scale. It gives marketing teams a repeatable way to reach subscribers, track delivery, and run campaigns without manual sending.",
       thumbnail: "/tonic.png",
       tags: ["n8n", "Twilio", "Kit.com", "Webhooks"],
       category: "Automation",
@@ -257,7 +335,7 @@ export const data: PortfolioData = {
     {
       title: "AI Book Writing Agent",
       description:
-        "AI agent that generates structured book content from uploaded transcripts, transforming raw material into chapters with consistent tone and style.",
+        "An AI writing workflow that turns raw transcripts into structured book chapters with consistent tone and organization. It helps authors move from spoken ideas to review-ready manuscript drafts much faster.",
       thumbnail: "/book.png",
       tags: ["n8n", "OpenAI API", "Prompt Orchestration"],
       category: "AI Automation",
@@ -267,7 +345,7 @@ export const data: PortfolioData = {
     {
       title: "SEO Content & Webflow Automation",
       description:
-        "End-to-end automation that researches a target vertical, writes SEO-optimized content, generates matching images, and auto-updates a Webflow site template — zero manual effort.",
+        "An SEO publishing automation that researches a target vertical, writes optimized articles, generates matching images, and updates Webflow CMS. It turns content production into a repeatable pipeline instead of a manual publishing process.",
       thumbnail: "/seo.png",
       tags: ["n8n", "OpenAI API", "Webflow API", "Image Generation"],
       category: "AI Automation",
@@ -277,7 +355,7 @@ export const data: PortfolioData = {
     {
       title: "OlalaHomes Property Dashboard",
       description:
-        "Full-featured property management dashboard for OlalaHomes — tracking rentals, occupancy stats, revenue, and maintenance requests across their entire portfolio.",
+        "A property management dashboard for OlalaHomes that centralizes rentals, occupancy, revenue, and maintenance activity. It replaces spreadsheet reporting with one operational view for faster property decisions.",
       thumbnail: "/olalahomes.png",
       tags: ["Next.js", "PostgreSQL", "Recharts", "TypeScript"],
       category: "SaaS",
@@ -287,7 +365,7 @@ export const data: PortfolioData = {
     {
       title: "Ghanem Labs — Web3 Audit SaaS",
       description:
-        "SaaS platform for smart contract audits, tokenomics analysis, and on-chain threat detection — giving investors actionable security intelligence before committing capital.",
+        "A Web3 intelligence SaaS for smart contract audits, tokenomics checks, and on-chain threat detection. It turns complex blockchain risk signals into clear reports investors can use before committing capital.",
       thumbnail: "/ghanemlabs.png",
       tags: ["Next.js", "Node.js", "Web3", "OpenAI API", "TypeScript"],
       category: "SaaS",
@@ -297,7 +375,7 @@ export const data: PortfolioData = {
     {
       title: "Outreach Genie — LinkedIn Outbound SaaS",
       description:
-        "LinkedIn outreach workspace for organizing prospect lists, managing team access, and running outbound campaigns with full pipeline clarity and AI-assisted messaging.",
+        "A LinkedIn outbound workspace for prospect lists, team access, campaign tracking, and AI-assisted messaging. It helps sales teams run outreach with pipeline clarity instead of scattered spreadsheets and notes.",
       thumbnail: "/outreach.png",
       tags: ["Next.js", "PostgreSQL", "LinkedIn API", "OpenAI API"],
       category: "SaaS",
@@ -307,7 +385,7 @@ export const data: PortfolioData = {
     {
       title: "AI Book Recommendation Automation",
       description:
-        "Automation built for aisr.qa that queries a database for user job data, runs an AI interview, and returns 8 personalised book recommendations tailored to the user's role and answered questions.",
+        "A personalized recommendation workflow for aisr.qa that combines user job data with an AI interview. It returns eight role-relevant book picks, making recommendations feel curated without manual research.",
       thumbnail: "/bookrecomendation.png",
       tags: ["n8n", "OpenAI API", "Database Query", "Webhooks"],
       category: "AI Automation",
@@ -317,7 +395,7 @@ export const data: PortfolioData = {
     {
       title: "TechForce GitHub Developer Sourcing",
       description:
-        "Automated recruiting pipeline for TechForce: pulls open job locations from Supabase, scrapes matching GitHub developers by city, and syncs qualified profiles directly into Gospott CRM — eliminating manual sourcing entirely.",
+        "A recruiting pipeline for TechForce that reads open job locations, finds matching GitHub developers by city, and syncs qualified profiles into Gospott CRM. It turns location-based sourcing into a repeatable automated workflow.",
       thumbnail: "/leads.png",
       tags: ["n8n", "GitHub API", "Supabase", "Gospott CRM", "Web Scraping"],
       category: "AI Automation",
@@ -327,7 +405,7 @@ export const data: PortfolioData = {
     {
       title: "TechForce Indeed Jobs Enrichment Pipeline",
       description:
-        "n8n automation that scrapes job listings from Indeed, syncs them to Clarify CRM, and enriches each record by pulling verified contact data from Apollo — giving TechForce a warm, data-rich outreach pipeline on autopilot.",
+        "An Indeed-to-CRM enrichment pipeline that scrapes job listings, syncs them to Clarify, and adds verified contact data from Apollo. It gives TechForce warmer outreach records with less manual research.",
       thumbnail: "/leads.png",
       tags: ["n8n", "Indeed Scraping", "Apollo API", "Clarify CRM", "Web Scraping"],
       category: "AI Automation",
@@ -337,7 +415,7 @@ export const data: PortfolioData = {
     {
       title: "Upwork Jobs Scraper & Contact Enrichment",
       description:
-        "Chrome extension that captures Upwork job listings and forwards them to an n8n pipeline — automatically enriching each lead with verified emails via FindThatLead and Apollo to build a ready-to-contact outreach list.",
+        "A Chrome extension and n8n pipeline for capturing Upwork jobs, enriching leads, and preparing outreach records. It helps freelancers and agencies move from job discovery to qualified contact lists faster.",
       thumbnail: "/upwork.png",
       tags: ["Chrome Extension", "n8n", "FindMyEmail", "Apollo API", "Web Scraping"],
       category: "AI Automation",
@@ -347,7 +425,7 @@ export const data: PortfolioData = {
     {
       title: "Strategy Navigator — AI SaaS Platform",
       description:
-        "Multi-tenant strategy platform with RBAC, AI assistants, analytics, and billing integrations — built for teams managing disconnected strategy workflows.",
+        "A multi-tenant strategy SaaS with RBAC, AI assistants, analytics, and billing. It gives teams one structured workspace for planning and tracking strategy instead of spreading decisions across slides, spreadsheets, and disconnected tools.",
       thumbnail: "/strategy-saas.png",
       tags: ["React", "Node.js", "OpenAI API", "TypeScript"],
       category: "SaaS",
@@ -357,7 +435,7 @@ export const data: PortfolioData = {
     {
       title: "JourneyAI — AI Sales Assistant Platform",
       description:
-        "AI-powered suite for sales teams covering meeting prep, automated summaries, and follow-up generation with real-time capabilities — deployed in production workflows.",
+        "An AI sales assistant platform that supports reps before and after calls with meeting prep, summaries, and follow-up drafts. Real-time workflows reduce admin work so sales teams can spend more time on active conversations.",
       thumbnail: "/journeyai-saas.png",
       tags: ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
       category: "SaaS",
@@ -367,7 +445,7 @@ export const data: PortfolioData = {
     {
       title: "SaleSide AI — Sales Meeting Assistant",
       description:
-        "Automated meeting intelligence platform with transcription, objection tracking, AI summaries, and action item extraction — eliminating manual note-taking.",
+        "A sales meeting intelligence platform that captures transcripts, objections, summaries, and action items. It preserves the value of each customer conversation and removes manual note-taking from the sales workflow.",
       thumbnail: "/salesside-saas.png",
       tags: ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
       category: "SaaS",
@@ -377,7 +455,7 @@ export const data: PortfolioData = {
     {
       title: "EduNova — LMS with AI & WebSocket",
       description:
-        "Learning management platform with AI chatbot support and real-time WebSocket communication — delivering scalable e-learning with live collaboration features.",
+        "An LMS with course management, AI chatbot support, and real-time WebSocket collaboration. It improves learner engagement by combining structured content, instant help, and live communication in one platform.",
       thumbnail: "/edunova-lms.png",
       tags: ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
       category: "SaaS",
@@ -387,7 +465,7 @@ export const data: PortfolioData = {
     {
       title: "ExplodingLeads — Lead Signal Engine",
       description:
-        "Automated lead signal pipeline that monitors Google and RapidAPI LinkedIn for new hire, new location, and new job signals — filters them through AI qualification criteria and delivers only warm, ready-to-contact leads directly to Gmail.",
+        "A lead-signal engine that monitors hiring, expansion, and job-posting signals, then qualifies them with AI before delivery. Sales teams receive context-rich leads in Gmail instead of manually scanning the web.",
       thumbnail: "/leadssignals.png",
       tags: ["n8n", "Google API", "RapidAPI", "OpenAI API", "Gmail", "LinkedIn"],
       category: "AI Automation",

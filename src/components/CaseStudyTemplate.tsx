@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, GitBranch } from "lucide-react";
@@ -15,11 +14,16 @@ const TECH_SLUG: Record<string, string> = {
   "Python":           "python",
   "TypeScript":       "typescript",
   "JavaScript":       "javascript",
+  "Electron.js":      "electron",
+  "Go":               "go",
   "Express.js":       "express",
   "Spring Boot":      "springboot",
   "PostgreSQL":       "postgresql",
   "MongoDB":          "mongodb",
+  "SQLite":           "sqlite",
   "Supabase":         "supabase",
+  "Airtable API":     "airtable",
+  "Recharts":         "recharts",
   "Prisma":           "prisma",
   "Docker":           "docker",
   "Vercel":           "vercel",
@@ -30,34 +34,124 @@ const TECH_SLUG: Record<string, string> = {
   "Gemini API":       "googlegemini",
   "n8n":              "n8n",
   "Twilio":           "twilio",
+  "Asana API":        "asana",
+  "Gmail":            "gmail",
+  "Slack API":        "slack",
+  "Fathom API":       "fathom",
+  "WhatsApp":         "whatsapp",
   "Webflow API":      "webflow",
   "LinkedIn API":     "linkedin",
   "Chrome Extension": "googlechrome",
   "LangChain":        "langchain",
 };
 
+const TAG_COLORS: Record<string, string> = {
+  "Next.js": "#64748b",
+  React: "#61dafb",
+  "Node.js": "#5fa04e",
+  Python: "#3776ab",
+  TypeScript: "#3178c6",
+  JavaScript: "#f7df1e",
+  "Electron.js": "#47848f",
+  Go: "#00add8",
+  "Express.js": "#9ca3af",
+  "Spring Boot": "#6db33f",
+  PostgreSQL: "#4169e1",
+  MongoDB: "#47a248",
+  SQLite: "#3f8fd2",
+  Supabase: "#3ecf8e",
+  "Airtable API": "#18bfff",
+  Recharts: "#8884d8",
+  Prisma: "#7c3aed",
+  Docker: "#2496ed",
+  Vercel: "#64748b",
+  "GitHub Actions": "#2088ff",
+  "GitHub API": "#8b949e",
+  "Tailwind CSS": "#06b6d4",
+  "OpenAI API": "#10a37f",
+  "Gemini API": "#8e75b2",
+  n8n: "#ea4b71",
+  Twilio: "#f22f46",
+  "Asana API": "#f06a6a",
+  Gmail: "#ea4335",
+  "Slack API": "#e01e5a",
+  "Fathom API": "#ff5a5f",
+  WhatsApp: "#25d366",
+  "Webflow API": "#146ef5",
+  "LinkedIn API": "#0a66c2",
+  "Chrome Extension": "#4285f4",
+  LangChain: "#10b981",
+  "Apollo API": "#3d6ce7",
+  LLM: "#c084fc",
+  AI: "#c084fc",
+  Webhooks: "#f97316",
+  "Vector Database": "#10b981",
+  ElevenLabs: "#9ca3af",
+  "Kit.com": "#ef4444",
+  "Prompt Orchestration": "#a855f7",
+  "Image Generation": "#ec4899",
+  "Google API": "#4285f4",
+  RapidAPI: "#0055da",
+  "Gospott CRM": "#22c55e",
+  "Clarify CRM": "#14b8a6",
+  "Indeed Scraping": "#2557a7",
+  "Web Scraping": "#f59e0b",
+  FindMyEmail: "#06b6d4",
+  "Gantic CRM": "#64748b",
+  "Spott API": "#22c55e",
+  "CRM Automation": "#14b8a6",
+  Transcription: "#8b5cf6",
+  ERP: "#0ea5e9",
+  "Desktop App": "#47848f",
+};
+
+function hexToRgba(hex: string, alpha: number): string {
+  const value = hex.replace("#", "");
+  const normalized =
+    value.length === 3
+      ? value
+          .split("")
+          .map((char) => char + char)
+          .join("")
+      : value;
+  const num = parseInt(normalized, 16);
+  const r = (num >> 16) & 255;
+  const g = (num >> 8) & 255;
+  const b = num & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function getTagColor(tag: string): string {
+  return TAG_COLORS[tag] ?? "#10b981";
+}
+
 function TechPill({ tag }: { tag: string }) {
   const slug = TECH_SLUG[tag];
   const [err, setErr] = useState(false);
+  const color = getTagColor(tag);
+
   return (
     <span
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium border"
+      className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-semibold"
       style={{
-        background: "var(--surface)",
-        borderColor: "var(--border)",
+        background: `linear-gradient(135deg, ${hexToRgba(color, 0.16)}, var(--surface))`,
+        borderColor: hexToRgba(color, 0.34),
         color: "var(--text-muted)",
       }}
     >
       {slug && !err && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`https://api.iconify.design/simple-icons:${slug}.svg?color=%23a8a8a8`}
+          src={`https://api.iconify.design/simple-icons:${slug}.svg?color=${encodeURIComponent(color)}`}
           alt=""
           width={13}
           height={13}
-          className="shrink-0"
+          className="h-3.5 w-3.5 shrink-0"
           onError={() => setErr(true)}
         />
+      )}
+      {(!slug || err) && (
+        <span className="h-2 w-2 rounded-full" style={{ background: color }} />
       )}
       {tag}
     </span>
@@ -78,8 +172,6 @@ interface Props {
 }
 
 export function CaseStudyTemplate({ study, project }: Props) {
-  const [imgErr, setImgErr] = useState(false);
-
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh", color: "var(--text)" }}>
       {/* Sticky nav */}
@@ -163,21 +255,43 @@ export function CaseStudyTemplate({ study, project }: Props) {
             {project?.description}
           </p>
 
-          {/* Thumbnail */}
-          {project?.thumbnail && !imgErr && (
-            <div
-              className="relative w-full aspect-video rounded-2xl overflow-hidden mt-10 border"
-              style={{ borderColor: "var(--border)", background: "var(--surface)" }}
-            >
-              <Image
-                src={project.thumbnail}
-                alt={project.title}
-                fill
-                className="object-cover"
-                onError={() => setImgErr(true)}
-              />
+          {(project?.bestFor || project?.resultLabel) && (
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {project.bestFor && (
+                <div
+                  className="rounded-xl border p-4"
+                  style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+                >
+                  <p
+                    className="mb-1 text-[10px] font-black uppercase tracking-[0.16em]"
+                    style={{ color: "var(--accent)" }}
+                  >
+                    Best for
+                  </p>
+                  <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>
+                    {project.bestFor}
+                  </p>
+                </div>
+              )}
+              {project.resultLabel && (
+                <div
+                  className="rounded-xl border p-4"
+                  style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+                >
+                  <p
+                    className="mb-1 text-[10px] font-black uppercase tracking-[0.16em]"
+                    style={{ color: "var(--accent)" }}
+                  >
+                    Impact
+                  </p>
+                  <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>
+                    {project.resultLabel}
+                  </p>
+                </div>
+              )}
             </div>
           )}
+
         </motion.section>
 
         {/* NUMBERED SECTIONS */}
