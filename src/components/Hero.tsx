@@ -1,238 +1,157 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CalendarDays,
+  CheckCircle2,
+} from "lucide-react";
 import { data } from "@/data/portfolio";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import styles from "./Hero.module.css";
 
-const WORDS = ["AI systems", "automations", "RAG pipelines", "AI agents"];
-const ease = [0.4, 0, 0.2, 1] as const;
+const ease = [0.22, 1, 0.36, 1] as const;
+const reveal = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease } },
+};
+
+function LinkedInIcon() {
+  return (
+    <svg
+      className={styles.linkedinBrandIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        fill="currentColor"
+        d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5ZM8 19H5V8h3v11ZM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764ZM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.397-2.586 7-2.777 7 2.476V19Z"
+      />
+    </svg>
+  );
+}
 
 export function Hero() {
-  const [wordIdx, setWordIdx] = useState(0);
-  const [imgError, setImgError] = useState(false);
-
-  useEffect(() => {
-    const t = setInterval(() => setWordIdx((i) => (i + 1) % WORDS.length), 2600);
-    return () => clearInterval(t);
-  }, []);
-
-  const initials = data.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: "var(--bg)" }}
-    >
-      {/* Grid */}
-      <div className="hero-grid" aria-hidden="true" />
-
-      {/* Center glow */}
-      <div
-        className="pointer-events-none absolute rounded-full blur-[200px]"
-        style={{
-          width: 700,
-          height: 700,
-          top: "40%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          background: "rgba(16,185,129,0.07)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Top lamp line */}
-      <div className="pointer-events-none absolute top-0 inset-x-0 flex flex-col items-center" aria-hidden="true">
-        <div
-          className="h-px w-60"
-          style={{ background: "linear-gradient(90deg, transparent, var(--accent), transparent)", opacity: 0.55 }}
-        />
-        <div
-          className="rounded-full blur-3xl"
-          style={{ width: 280, height: 64, marginTop: -32, background: "var(--accent)", opacity: 0.1 }}
-        />
-      </div>
-
-      {/* ── CONTENT ── */}
-      <div className="relative z-10 w-full max-w-2xl mx-auto px-6 pt-28 pb-20 flex flex-col items-center text-center">
-
-        {/* Avatar */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.75 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease }}
-          className="mb-5"
-        >
-          <div
-            className="relative w-[68px] h-[68px] rounded-full overflow-hidden"
-            style={{
-              border: "2px solid var(--accent)",
-              boxShadow: "0 0 0 4px var(--accent-dim), 0 0 28px var(--accent-glow)",
-            }}
+    <section id="hero" className={styles.hero} aria-labelledby="hero-title">
+      <motion.div
+        className={styles.heroCard}
+        initial={{ opacity: 0, y: 20, scale: 0.99 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.65, ease }}
+      >
+        <div className={styles.cardBody}>
+          <motion.div
+            className={styles.copy}
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.08, delayChildren: 0.14 }}
           >
-            {!imgError ? (
+            <motion.div variants={reveal} className={styles.availability} role="status">
+              <span className={styles.liveDot} aria-hidden="true" />
+              Available for new projects
+            </motion.div>
+
+            <motion.h1 variants={reveal} id="hero-title" className={styles.headline}>
+              Build smarter.
+              <span>Work lighter.</span>
+            </motion.h1>
+
+            <motion.p variants={reveal} className={styles.description}>
+              I build dependable systems for the work your team is tired of handling by hand. Tasks move
+              forward automatically, updates arrive without follow-ups, and everyone stays clear on what is
+              happening. With automation and custom software, I make your operations simpler, faster, and
+              easier to trust.
+            </motion.p>
+
+            <motion.div variants={reveal} className={styles.actions}>
+              <a
+                href={data.social.calendly}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.primaryAction}
+              >
+                <CalendarDays size={17} aria-hidden="true" />
+                Book a free strategy call
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+              <a href="#projects" className={styles.secondaryAction}>
+                View selected work
+              </a>
+            </motion.div>
+
+            <motion.p variants={reveal} className={styles.callNote}>
+              <CheckCircle2 size={14} aria-hidden="true" />
+              30 minutes · No sales pitch · Clear next steps
+            </motion.p>
+          </motion.div>
+
+          <motion.aside
+            className={styles.profileCard}
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.62, ease, delay: 0.24 }}
+            aria-label="Profile summary"
+          >
+            <div className={styles.profileGlow} aria-hidden="true" />
+
+            <div className={`${styles.metricChip} ${styles.projectsChip}`}>
+              <strong>{data.stats[0]?.value}</strong>
+              <span>projects shipped</span>
+            </div>
+            <div className={`${styles.metricChip} ${styles.deliveryChip}`}>
+              <strong>{data.stats[3]?.value}</strong>
+              <span>on-time delivery</span>
+            </div>
+
+            <div className={styles.portraitFrame}>
               <Image
                 src={data.photo}
-                alt={data.name}
+                alt={`Portrait of ${data.name}`}
                 fill
-                className="object-cover object-top"
                 priority
-                onError={() => setImgError(true)}
+                sizes="(max-width: 760px) 132px, 160px"
+                className={styles.portrait}
               />
-            ) : (
-              <div
-                className="w-full h-full flex items-center justify-center text-base font-black"
-                style={{ background: "var(--bg3)", color: "var(--accent)" }}
-              >
-                {initials}
-              </div>
-            )}
-          </div>
-        </motion.div>
-
-        {/* Availability */}
-        <motion.div
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease, delay: 0.1 }}
-          className="mb-7"
-        >
-          <div className="avail-badge" role="status" aria-live="polite">
-            <span className="avail-dot" />
-            Available for new projects
-          </div>
-        </motion.div>
-
-        {/* ── HEADLINE ── */}
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease, delay: 0.18 }}
-          className="font-black leading-[1.1] tracking-tighter mb-2"
-          style={{ fontSize: "clamp(2.4rem, 6.5vw, 4.5rem)", letterSpacing: "-0.048em", color: "var(--text)" }}
-        >
-          <span style={{ color: "var(--accent)" }}>Full Stack</span>{" "}&amp;{" "}
-          <span style={{ color: "var(--text)" }}>Automation</span>
-          <br />
-          <span style={{ color: "var(--text)" }}>Engineer</span>
-        </motion.h1>
-
-        {/* Animated sub-line */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease, delay: 0.28 }}
-          className="font-semibold mb-6 flex items-center justify-center gap-2 flex-wrap"
-          style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", color: "var(--text-muted)" }}
-        >
-          I build{" "}
-          <span
-            className="relative inline-block font-black"
-            style={{ minWidth: "10ch" }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={wordIdx}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.22, ease }}
-                className="inline-block"
-                style={{
-                  background: "linear-gradient(135deg, #10b981 0%, #3b82f6 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {WORDS[wordIdx]}
-              </motion.span>
-            </AnimatePresence>
-          </span>
-          {" "}that actually work.
-        </motion.p>
-
-        {/* Bio */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease, delay: 0.36 }}
-          className="text-sm md:text-base leading-relaxed mb-7 max-w-xl"
-          style={{ color: "var(--text-muted)" }}
-        >
-          {data.bio}
-        </motion.p>
-
-        {/* Skill chips */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease, delay: 0.44 }}
-          className="flex flex-wrap justify-center gap-2 mb-8"
-        >
-          {["Next.js", "Node.js", "Python", "PostgreSQL", "n8n", "LangChain", "OpenAI API"].map((skill) => (
-            <span
-              key={skill}
-              className="px-3 py-1 rounded-full text-xs font-semibold border"
-              style={{ background: "var(--surface)", borderColor: "var(--border)", color: "var(--text-muted)" }}
-            >
-              {skill}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* CTAs — plain, no magnetic wrapper */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease, delay: 0.52 }}
-          className="flex gap-3 flex-wrap justify-center mb-10"
-        >
-          <a href="#booking" className="btn-primary">
-            <Calendar size={15} />
-            Book a Free Call
-          </a>
-          <a href="#projects" className="btn-secondary">
-            See My Work
-            <ArrowRight size={15} />
-          </a>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease, delay: 0.6 }}
-          className="flex flex-wrap justify-center gap-px overflow-hidden rounded-2xl border"
-          style={{ borderColor: "var(--border)", background: "var(--border)" }}
-        >
-          {data.stats.map((stat, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center justify-center py-4 px-6 min-w-[100px]"
-              style={{ background: "var(--surface)" }}
-            >
-              <span
-                className="font-black text-xl leading-none mb-1"
-                style={{ color: "var(--text)", letterSpacing: "-0.04em" }}
-              >
-                <AnimatedCounter value={stat.value} />
-              </span>
-              <span className="text-xs font-semibold" style={{ color: "var(--text-dim)" }}>
-                {stat.label}
-              </span>
             </div>
-          ))}
-        </motion.div>
-      </div>
+
+            <div className={styles.profileCopy}>
+              <h2>{data.name}</h2>
+              <p>AI Automation &amp; Full-Stack Engineer</p>
+            </div>
+
+            <nav className={styles.socialLinks} aria-label="Professional profiles">
+              <a href={data.social.upwork} target="_blank" rel="noreferrer">
+                <span className={`${styles.brandIcon} ${styles.upworkIcon}`} aria-hidden="true" />
+                Upwork
+              </a>
+              {data.social.github && (
+                <a href={data.social.github} target="_blank" rel="noreferrer">
+                  <span className={`${styles.brandIcon} ${styles.githubIcon}`} aria-hidden="true" />
+                  GitHub
+                </a>
+              )}
+              <a href={data.social.linkedin} target="_blank" rel="noreferrer">
+                <LinkedInIcon />
+                LinkedIn
+              </a>
+            </nav>
+          </motion.aside>
+        </div>
+
+        <footer className={styles.cardFooter}>
+          <p className={styles.trustStatement}>
+            <CheckCircle2 size={18} aria-hidden="true" />
+            <strong>Trusted for production AI, automation, and SaaS delivery</strong>
+          </p>
+          <div className={styles.stats} aria-label="Professional highlights">
+            <span><strong>{data.stats[0]?.value}</strong><small>projects</small></span>
+            <span><strong>{data.stats[1]?.value}</strong><small>clients</small></span>
+            <span><strong>{data.stats[2]?.value}</strong><small>years</small></span>
+          </div>
+        </footer>
+      </motion.div>
     </section>
   );
 }
