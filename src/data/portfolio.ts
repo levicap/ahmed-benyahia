@@ -20,7 +20,7 @@ export const data: PortfolioData = {
   ],
 
   platforms: [
-    { name: "Upwork",   badge: "Available",     url: "https://www.upwork.com/freelancers/ahmedbenyahia" },
+    { name: "Upwork",   badge: "Available",     url: "https://www.upwork.com/freelancers/~01ea5c88341e5ce942" },
     { name: "LinkedIn", badge: "Open to Work",  url: "https://linkedin.com/in/ahmedbenyahia" },
   ],
 
@@ -627,7 +627,7 @@ export const data: PortfolioData = {
   ],
 
   social: {
-    upwork:   "https://www.upwork.com/freelancers/ahmedbenyahia",
+    upwork:   "https://www.upwork.com/freelancers/~01ea5c88341e5ce942",
     linkedin: "https://linkedin.com/in/ahmedbenyahia",
     whatsapp: "https://wa.me/21650193344",
     calendly: "https://calendly.com/ahmedbenyahia654/30min?hide_gdpr_banner=1&timezone=Africa%2FTunis",
