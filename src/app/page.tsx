@@ -20,12 +20,12 @@ export default function Home() {
       <main>
         <Hero />
         <ClientMarquee />
-        <Services />
         <Projects />
+        <Testimonials />
+        <Services />
         <Experience />
         <Process />
         <TechStack />
-        <Testimonials />
         <Guarantee />
         <FAQ />
         <Booking />
@@ -34,5 +34,4 @@ export default function Home() {
     </>
   );
 }
-
 

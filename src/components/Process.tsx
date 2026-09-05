@@ -1,108 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GitPullRequestArrow, ShieldCheck } from "lucide-react";
 import { data } from "@/data/portfolio";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import styles from "./Process.module.css";
 
 export function Process() {
   return (
-    <section
-      id="process"
-      className="py-24"
-      style={{ background: "var(--bg2)" }}
-      aria-label="How I work"
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
-        >
-          {/* Left: header */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: [0.4, 0, 0.2, 1] }}
-            viewport={{ once: true, margin: "-40px" }}
-            className="lg:sticky lg:top-24"
-          >
-            <SectionHeader
-              label="How I Work"
-              title={`A process\nbuilt for results`}
-              subtitle="Every project follows a proven framework that keeps you informed, on schedule, and confident at every step."
-            />
-            <div
-              className="mt-6 p-5 rounded-2xl border"
-              style={{ background: "var(--accent-dim)", borderColor: "var(--border-accent)" }}
-            >
-              <p className="text-sm font-semibold" style={{ color: "var(--accent)" }}>
-                💬 Free strategy call included
-              </p>
-              <p className="text-xs mt-1.5 leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                Before any commitment, we hop on a free 30-minute call to make sure we&apos;re the right fit for each other.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right: timeline */}
-          <div className="relative">
-            {/* Vertical line */}
-            <div
-              className="absolute left-7 top-4 bottom-4 w-0.5 rounded-full"
-              style={{
-                background: "linear-gradient(to bottom, var(--accent), transparent)",
-              }}
-              aria-hidden="true"
-            />
-
-            <div className="flex flex-col">
-              {data.process.map((step, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.4, 0, 0.2, 1],
-                    delay: i * 0.08,
-                  }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  className="relative grid gap-5 pb-10 last:pb-0 group"
-                  style={{ gridTemplateColumns: "56px 1fr" }}
-                >
-                  {/* Step dot */}
-                  <div
-                    className="w-14 h-14 rounded-full border-2 flex items-center justify-center text-sm font-black z-10 relative transition-all duration-300 group-hover:scale-110"
-                    style={{
-                      background: "var(--bg)",
-                      borderColor: "var(--border-accent)",
-                      color: "var(--accent)",
-                    }}
-                  >
-                    {String(step.step).padStart(2, "0")}
-                  </div>
-
-                  {/* Step content */}
-                  <div className="pt-2.5">
-                    <span
-                      className="inline-block text-xs font-bold px-2.5 py-0.5 rounded-full mb-2 uppercase tracking-wider"
-                      style={{ background: "var(--accent-dim)", color: "var(--accent)" }}
-                    >
-                      {step.badge}
-                    </span>
-                    <h3
-                      className="text-base font-bold mb-1.5"
-                      style={{ color: "var(--text)", letterSpacing: "-0.02em" }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                      {step.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+    <section id="process" className={styles.section} aria-labelledby="process-title">
+      <div className={styles.inner}>
+        <motion.header className={styles.header} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <div><p className={styles.eyebrow}>How I work</p><h2 id="process-title">From unclear process to reliable production.</h2></div>
+          <p>Every project follows a visible delivery loop. You know what is being built, what changed, and what happens next.</p>
+        </motion.header>
+        <div className={styles.pipeline}>
+          {data.process.map((step, index) => (
+            <motion.article key={step.step} className={styles.step} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .06 }}>
+              <span className={styles.node}>{String(step.step).padStart(2,"0")}</span>
+              <span className={styles.badge}>{step.badge}</span><h3>{step.title}</h3><p>{step.description}</p>
+            </motion.article>
+          ))}
         </div>
+        <div className={styles.handoff}><GitPullRequestArrow size={18} /><p><strong>Human review stays in the loop.</strong> Working modules, decisions, and risks are shared before launch—not after.</p><span><ShieldCheck size={11} /> 30-day support</span></div>
       </div>
     </section>
   );

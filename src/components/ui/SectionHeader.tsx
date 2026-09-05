@@ -8,11 +8,11 @@ interface Props {
 export function SectionHeader({ label, title, subtitle, center = false }: Props) {
   const align = center ? "text-center items-center" : "";
   return (
-    <div className={`flex flex-col mb-12 ${align}`}>
+    <div className={`flex flex-col mb-10 ${align}`}>
       <div className={`section-label ${center ? "justify-center" : ""}`}>{label}</div>
       <h2
-        className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4"
-        style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
+        className="text-4xl md:text-6xl tracking-tight leading-none mb-4"
+        style={{ color: "var(--text)", letterSpacing: "-0.045em", fontFamily: "var(--font-display)", fontWeight: 500 }}
       >
         {title}
       </h2>

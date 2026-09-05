@@ -1,204 +1,88 @@
 "use client";
 
-import { useState } from "react";
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { data } from "@/data/portfolio";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { getTechBrand } from "@/data/techBrand";
+import { TechLogo } from "@/components/ui/TechLogo";
+import styles from "./TechStack.module.css";
 
-const TECH_ICONS: Record<string, string> = {
-  "Next.js":        "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
-  "React":          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  "Tailwind CSS":   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-  "TypeScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  "Python":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-  "JavaScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  "Electron.js":    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg",
-  "Node.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-  "Express.js":     "https://cdn.simpleicons.org/express/FFFFFF",
-  "Nest.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
-  "Spring Boot":    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
-  "n8n":            "https://cdn.simpleicons.org/n8n/EA4B71",
-  "Zapier":         "https://cdn.simpleicons.org/zapier/FF4A00",
-  "LangChain":      "https://cdn.simpleicons.org/langchain/1C3C3C",
-  "OpenAI":         "https://cdn.simpleicons.org/openai/FFFFFF",
-  "ElevenLabs":     "https://cdn.simpleicons.org/elevenlabs/FFFFFF",
-  "Claude":         "https://cdn.simpleicons.org/anthropic/CC785C",
-  "Gemini":         "https://cdn.simpleicons.org/googlegemini/8E75B2",
-  "Make":           "https://cdn.simpleicons.org/make/6D00CC",
-  "HubSpot":        "https://cdn.simpleicons.org/hubspot/FF7A59",
-  "Apollo":         "https://cdn.simpleicons.org/apollo/3D6CE7",
-  "PostgreSQL":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-  "MongoDB":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-  "SQLite":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
-  "Supabase":       "https://cdn.simpleicons.org/supabase/3ECF8E",
-  "Docker":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-  "Vercel":         "https://cdn.simpleicons.org/vercel/FFFFFF",
-  "GitHub Actions": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
-};
-
-// Icons using FFFFFF — need CSS inversion on light theme
-const MONO_ICONS = new Set([
-  "Next.js", "Express.js", "OpenAI", "ElevenLabs", "Vercel",
-]);
-
-function TechIcon({ name, category }: { name: string; category: string }) {
-  const [failed, setFailed] = useState(false);
-  const color = CAT_COLORS[category] ?? "#10b981";
-  const iconUrl = TECH_ICONS[name];
-
-  if (!iconUrl || failed) {
-    return (
-      <span
-        className="w-4 h-4 rounded-full shrink-0"
-        style={{ background: color }}
-      />
-    );
-  }
-
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={iconUrl}
-      alt={name}
-      width={16}
-      height={16}
-      className={`w-4 h-4 shrink-0 object-contain${MONO_ICONS.has(name) ? " icon-mono" : ""}`}
-      onError={() => setFailed(true)}
-    />
-  );
-}
-
-const CAT_COLORS: Record<string, string> = {
-  frontend: "#3b82f6",
-  desktop:  "#47848f",
-  backend:  "#8b5cf6",
-  language: "#f59e0b",
-  styling:  "#ec4899",
-  database: "#10b981",
-  orm:      "#06b6d4",
-  api:      "#f97316",
-  devops:   "#6366f1",
-  cache:    "#14b8a6",
-  cloud:    "#0ea5e9",
-  deploy:   "#84cc16",
-  payments: "#facc15",
-  automation:"#f97316",
-  ai:       "#c084fc",
-  animation:"#fb923c",
-  design:   "#e879f9",
-  ci:       "#4ade80",
-  testing:  "#fb7185",
-  validation:"#67e8f9",
-};
-
-function hexToRgba(hex: string, alpha: number): string {
-  const value = hex.replace("#", "");
-  const normalized =
-    value.length === 3
-      ? value
-          .split("")
-          .map((char) => char + char)
-          .join("")
-      : value;
-  const num = parseInt(normalized, 16);
-  const r = (num >> 16) & 255;
-  const g = (num >> 8) & 255;
-  const b = num & 255;
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
-
-function StackRow({
-  items,
-  direction,
-  speed,
-}: {
-  items: (typeof data.stack)[0][];
-  direction: "left" | "right";
-  speed: number;
-}) {
-  const doubled = [...items, ...items, ...items, ...items];
-  return (
-    <div className="relative overflow-hidden my-1.5">
-      <div
-        className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to right, var(--bg3), transparent)" }}
-      />
-      <div
-        className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to left, var(--bg3), transparent)" }}
-      />
-      <div
-        className="flex gap-2.5"
-        style={{
-          width: "max-content",
-          animation: `marquee-${direction} ${speed}s linear infinite`,
-        }}
-      >
-        {doubled.map((t, i) => {
-          const color = CAT_COLORS[t.category] ?? "#10b981";
-
-          return (
-            <div
-              key={i}
-              className="inline-flex cursor-default items-center gap-2.5 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-semibold transition-all duration-200 hover:scale-105"
-              style={{
-                background: `linear-gradient(135deg, ${hexToRgba(color, 0.16)}, var(--surface))`,
-                borderColor: hexToRgba(color, 0.34),
-                boxShadow: `0 8px 24px ${hexToRgba(color, 0.07)}`,
-                color: "var(--text-muted)",
-              }}
-            >
-              <span
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full border"
-                style={{
-                  background: hexToRgba(color, 0.14),
-                  borderColor: hexToRgba(color, 0.28),
-                }}
-              >
-                <TechIcon name={t.name} category={t.category} />
-              </span>
-              {t.name}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
+const TOOL_GROUPS = [
+  {
+    id: "01",
+    title: "Interface layer",
+    command: "render.user_experience()",
+    tools: ["Next.js", "React", "Tailwind CSS", "TypeScript", "JavaScript", "Electron.js"],
+  },
+  {
+    id: "02",
+    title: "Intelligence layer",
+    command: "reason.with_context()",
+    tools: ["LangChain", "OpenAI", "ElevenLabs", "Claude", "Gemini"],
+  },
+  {
+    id: "03",
+    title: "Automation layer",
+    command: "orchestrate.operations()",
+    tools: ["n8n", "Zapier", "Make", "HubSpot"],
+  },
+  {
+    id: "04",
+    title: "Infrastructure layer",
+    command: "ship.reliably()",
+    tools: ["Node.js", "Express.js", "Nest.js", "Python", "PostgreSQL", "MongoDB", "SQLite", "Supabase", "Docker", "Vercel", "GitHub Actions"],
+  },
+] as const;
 
 export function TechStack() {
-  const chunkSize = Math.ceil(data.stack.length / 3);
-  const rows = [
-    data.stack.slice(0, chunkSize),
-    data.stack.slice(chunkSize, chunkSize * 2),
-    data.stack.slice(chunkSize * 2),
-  ] as const;
-
   return (
-    <section
-      id="stack"
-      className="py-20 overflow-hidden border-y"
-      style={{ background: "var(--bg3)", borderColor: "var(--border)" }}
-      aria-label="Tech stack"
-    >
-      <div className="max-w-6xl mx-auto px-6 mb-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-          viewport={{ once: true }}
-        >
-          <SectionHeader
-            label="Tech Stack"
-            title="Tools I build with"
-            subtitle="Modern, battle-tested technologies chosen for performance, developer experience, and scalability."
-          />
+    <section id="stack" className={styles.section} aria-labelledby="stack-title">
+      <div className={styles.inner}>
+        <motion.div className={styles.intro} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .55 }} viewport={{ once: true }}>
+          <div>
+            <p className={styles.eyebrow}>Technology</p>
+            <h2 id="stack-title">A practical stack for intelligent systems.</h2>
+          </div>
+          <div className={styles.stackNote}>
+            <span><i /> Built for maintainability</span>
+            <p>Automation platforms when speed matters. Custom code when control matters. Every tool is chosen around the workflow—not the trend.</p>
+          </div>
         </motion.div>
+        <div className={styles.pipeline} aria-label="Technology stack grouped by system layer">
+          {TOOL_GROUPS.map((group, groupIndex) => {
+            const tools = data.stack.filter((tool) => (group.tools as readonly string[]).includes(tool.name));
+            return (
+              <motion.article
+                className={styles.group}
+                key={group.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: .42, delay: groupIndex * .07 }}
+              >
+                <header>
+                  <span className={styles.groupIndex}>{group.id}</span>
+                  <div><h3>{group.title}</h3><code>{group.command}</code></div>
+                  <span className={styles.toolCount}>{tools.length} tools</span>
+                </header>
+                <div className={styles.tools} role="list">
+                  {tools.map((tool) => (
+                    <div
+                      key={tool.name}
+                      className={`${styles.tool} ${tool.name === "Claude" ? styles.claude : ""}`}
+                      role="listitem"
+                      style={{ "--brand": getTechBrand(tool.name)?.color ?? "var(--accent-2)" } as CSSProperties}
+                    >
+                      <span className={styles.iconPlate}><TechLogo name={tool.name} className={styles.fallback} size={26} /></span>
+                      <span><strong>{tool.name}</strong><small>{tool.category}</small></span>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
-
-      <StackRow items={[...rows[0]]} direction="left"  speed={22} />
-      <StackRow items={[...rows[1]]} direction="right" speed={26} />
-      <StackRow items={[...rows[2]]} direction="left"  speed={20} />
     </section>
   );
 }

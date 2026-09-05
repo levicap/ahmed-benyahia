@@ -27,7 +27,7 @@ function RelatedProjectCard({ title }: { title: string }) {
       style={{ background: "var(--surface)", borderColor: "var(--border)" }}
     >
       {/* Thumbnail */}
-      <div className="relative aspect-video bg-gradient-to-br from-emerald-400/20 to-teal-400/10 overflow-hidden">
+      <div className="relative aspect-video overflow-hidden" style={{ background: "linear-gradient(145deg, var(--accent-dim), var(--accent-2-dim))" }}>
         {project.thumbnail && !imgErr ? (
           <Image
             src={project.thumbnail}

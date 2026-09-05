@@ -255,7 +255,7 @@ export function Pricing() {
           >
             Book a free 20-min scoping call
           </Link>{" "}
-          and I'll tell you exactly what you need.
+          and I&apos;ll tell you exactly what you need.
         </motion.p>
       </div>
     </section>

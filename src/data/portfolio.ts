@@ -25,7 +25,7 @@ export const data: PortfolioData = {
   ],
 
   clients: [
-    { name: "MiniSport",  logo: "/images/minisport.png" },
+    { name: "MiniSport",  logo: "/minisport.svg" },
     { name: "iPrint",     logo: "/images/iprint.png" },
     { name: "Bookielink", logo: "/images/bookielink.png" },
     { name: "OlalaHomes", logo: "/images/olala.png" },
@@ -311,6 +311,8 @@ export const data: PortfolioData = {
       category: "AI Automation",
       liveUrl: "",
       githubUrl: "",
+      resultLabel: "High-volume support automation",
+      bestFor: "Support teams handling repetitive chat and phone requests",
     },
     {
       title: "Lead Acquisition System",
@@ -361,6 +363,8 @@ export const data: PortfolioData = {
       category: "SaaS",
       liveUrl: "",
       githubUrl: "",
+      resultLabel: "15+ hours saved each week",
+      bestFor: "Property teams replacing spreadsheet-based reporting",
     },
     {
       title: "Ghanem Labs — Web3 Audit SaaS",
@@ -431,6 +435,8 @@ export const data: PortfolioData = {
       category: "SaaS",
       liveUrl: "https://strategynavigator.ai/",
       githubUrl: "",
+      resultLabel: "One workspace for strategy execution",
+      bestFor: "Leadership teams managing strategy across disconnected tools",
     },
     {
       title: "JourneyAI — AI Sales Assistant Platform",
@@ -607,22 +613,28 @@ export const data: PortfolioData = {
 
   guarantee: [
     {
-      title: "100% Satisfaction or Refund",
+      title: "Written Scope & Acceptance",
       description:
-        "If you're not happy with the final delivery, I'll refund you in full — no questions asked.",
-      icon: "shield-check",
+        "Before development starts, we agree on the deliverables, dependencies, and the checks that define a successful handover.",
+      icon: "file-check",
     },
     {
-      title: "Unlimited Revisions",
+      title: "Defined Revision Rounds",
       description:
-        "I iterate until the solution meets your exact requirements and performance targets.",
+        "Your proposal states how many review rounds are included, when feedback is collected, and how additional changes are handled.",
       icon: "refresh-cw",
     },
     {
-      title: "On-Time Delivery Promise",
+      title: "Visible Delivery Milestones",
       description:
-        "Every project ships on schedule. If I miss a deadline, I work for free until it's done.",
-      icon: "clock",
+        "The work is divided into clear checkpoints with working demos, progress updates, and early visibility into risks or decisions.",
+      icon: "milestone",
+    },
+    {
+      title: "Documented Support Window",
+      description:
+        "Handover includes documentation, ownership notes, and a written support period with clear response and maintenance expectations.",
+      icon: "life-buoy",
     },
   ],
 
