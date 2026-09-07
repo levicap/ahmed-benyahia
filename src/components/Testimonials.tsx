@@ -23,8 +23,13 @@ export function Testimonials() {
                 <blockquote className={styles.quote}>“{testimonial.review}”</blockquote>
                 <footer className={styles.person}>
                   <span className={styles.avatar}>{testimonial.photo ? <Image src={testimonial.photo} alt="" width={38} height={38} /> : initials}</span>
-                  <div><strong>{testimonial.name}</strong><small>{testimonial.project} · {testimonial.platform}</small></div>
-                  <BadgeCheck className={styles.verified} size={16} aria-label="Verified client feedback" />
+                  <div className={styles.personCopy}>
+                    <div className={styles.nameRow}>
+                      <strong>{testimonial.name}</strong>
+                      <BadgeCheck className={styles.verified} size={16} aria-label="Verified client feedback" />
+                    </div>
+                    <small>{testimonial.project}</small>
+                  </div>
                 </footer>
               </motion.article>
             );

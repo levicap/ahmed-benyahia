@@ -51,11 +51,11 @@
 .actions { display: flex; margin-top: 1rem; flex-wrap: wrap; gap: .55rem; }
 .primary,
 .secondary { display: inline-flex; min-height: 2.9rem; padding: .68rem .95rem; align-items: center; justify-content: center; gap: .45rem; border-radius: .55rem; font-size: .69rem; font-weight: 750; text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease; }
-.primary { color: #fffaf4; background: var(--text); box-shadow: 0 9px 22px rgba(37, 32, 28, .14); }
+.primary { color: var(--accent-contrast); background: var(--accent); box-shadow: 0 10px 26px var(--accent-glow); }
 .secondary { color: var(--text); border: 1px solid var(--border-strong); background: var(--bg); }
 .primary:hover,
 .secondary:hover { transform: translateY(-2px); }
-.primary:hover { background: var(--accent); }
+.primary:hover { background: var(--accent-hover); }
 .secondary:hover { background: var(--surface-hover); }
 
 @media (max-width: 780px) {

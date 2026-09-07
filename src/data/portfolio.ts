@@ -2,9 +2,9 @@ import type { PortfolioData } from "@/types";
 
 export const data: PortfolioData = {
   name: "Ahmed Ben Yahia",
-  photo: "/ahmed.jpg",
+  photo: "/ahmed-linkedin.png",
   title: [
-    "AI & Automation Engineer",
+    "Full-Stack & AI Automation Engineer",
     "RAG Systems Specialist",
     "Full Stack Developer",
     "LLM Pipeline Builder",
@@ -383,7 +383,7 @@ export const data: PortfolioData = {
       thumbnail: "/outreach.png",
       tags: ["Next.js", "PostgreSQL", "LinkedIn API", "OpenAI API"],
       category: "SaaS",
-      liveUrl: "https://leanorchestr.com/",
+      liveUrl: "https://www.outreachgenie.ai/",
       githubUrl: "",
     },
     {

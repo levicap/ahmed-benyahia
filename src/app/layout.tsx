@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "Ahmed Ben Yahia — AI & Automation Engineer",
+  title: "Ahmed Ben Yahia — Full-Stack & AI Automation Engineer",
   description:
     "AI automation engineer building reliable workflow systems, intelligent internal tools, and production SaaS. 27+ projects delivered for 10+ clients.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Freelancer",
   ],
   openGraph: {
-    title: "Ahmed Ben Yahia — AI & Automation Engineer",
+    title: "Ahmed Ben Yahia — Full-Stack & AI Automation Engineer",
     description: "Reliable AI systems, workflow automation, and production SaaS built around real operational problems.",
     type: "website",
   },

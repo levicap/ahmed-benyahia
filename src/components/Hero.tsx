@@ -45,7 +45,7 @@ export function Hero() {
           <header className={styles.identity}>
             <div>
               <p>{data.name}</p>
-              <span>AI &amp; Automation Engineer</span>
+              <span>Full-Stack &amp; AI Automation Engineer</span>
             </div>
 
             <nav className={styles.socials} aria-label="Professional profiles">
@@ -69,10 +69,12 @@ export function Hero() {
               Build smarter. <em>Work lighter.</em>
             </h1>
             <p className={styles.lede}>
-              I build systems that take repetitive work off your team’s plate.
-              Information moves where it should, updates happen automatically,
-              and everyone can see what happens next. I combine automation tools
-              with custom code to make operations clearer and more reliable.
+              I build the systems that take repetitive work off your team’s plate—from
+              SaaS products and internal tools to RAG assistants, voice agents, and
+              n8n workflows. Information moves where it should, updates happen
+              automatically, and everyone can see what happens next. I combine
+              full-stack engineering, automation tools, and custom code to make
+              operations clearer and more reliable.
             </p>
 
             <div className={styles.actions}>
