@@ -10,6 +10,7 @@ import { toSlug } from "@/lib/slug";
 import type { Project } from "@/types";
 import { getTechBrand } from "@/data/techBrand";
 import { TechLogo } from "@/components/ui/TechLogo";
+import { getPublicProjectTitle } from "@/lib/projectPresentation";
 import styles from "./Projects.module.css";
 
 const FILTERS = ["All", "Automation", "AI & SaaS", "Business systems"] as const;
@@ -49,6 +50,8 @@ function getOutcome(project: Project) {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  const publicTitle = getPublicProjectTitle(project.title);
+
   return (
     <motion.article
       layout
@@ -58,10 +61,10 @@ function ProjectCard({ project }: { project: Project }) {
       transition={{ duration: 0.36 }}
       className={styles.projectCard}
     >
-      <Link href={`/projects/${toSlug(project.title)}`} className={styles.imageLink} aria-label={`Read the ${project.title} case study`}>
+      <Link href={`/projects/${toSlug(project.title)}`} className={styles.imageLink} aria-label={`Read the ${publicTitle} case study`}>
         <Image
           src={project.thumbnail}
-          alt={`${project.title} project preview`}
+          alt={`${publicTitle} project preview`}
           fill
           sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 34vw"
           className={styles.projectImage}
@@ -75,7 +78,7 @@ function ProjectCard({ project }: { project: Project }) {
           <span className={styles.outcomeDot} aria-hidden="true" />
           <span>{getOutcome(project)}</span>
         </div>
-        <h3><Link href={`/projects/${toSlug(project.title)}`}>{project.title}</Link></h3>
+        <h3><Link href={`/projects/${toSlug(project.title)}`}>{publicTitle}</Link></h3>
         <p className={styles.description}>{project.description}</p>
 
         {project.bestFor && (
@@ -103,12 +106,12 @@ function ProjectCard({ project }: { project: Project }) {
           </Link>
           <div className={styles.externalLinks}>
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} live`}>
+              <a href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`Open ${publicTitle} live`}>
                 <ExternalLink size={14} aria-hidden="true" />
               </a>
             )}
             {project.githubUrl && (
-              <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} source code`}>
+              <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`View ${publicTitle} source code`}>
                 <GitBranch size={14} aria-hidden="true" />
               </a>
             )}

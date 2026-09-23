@@ -20,6 +20,7 @@ import { toSlug } from "@/lib/slug";
 import type { Project } from "@/types";
 import { getTechBrand } from "@/data/techBrand";
 import { TechLogo } from "@/components/ui/TechLogo";
+import { getPublicProjectTitle } from "@/lib/projectPresentation";
 import styles from "./CaseStudyTemplate.module.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -31,6 +32,7 @@ interface Props {
 
 export function CaseStudyTemplate({ study, project }: Props) {
   const slug = project ? toSlug(project.title) : "";
+  const publicTitle = project ? getPublicProjectTitle(project.title) : "Case Study";
   const gallery = projectMedia[slug] ?? [];
   const [selectedImage, setSelectedImage] = useState(0);
   const activeMedia = gallery[selectedImage];
@@ -68,7 +70,7 @@ export function CaseStudyTemplate({ study, project }: Props) {
               <i aria-hidden="true" />
               <span>{project?.category ?? "Client project"}</span>
             </div>
-            <h1>{project?.title ?? "Case Study"}</h1>
+            <h1>{publicTitle}</h1>
             <p className={styles.lede}>{project?.description}</p>
 
             <div className={styles.heroActions}>
@@ -180,7 +182,7 @@ export function CaseStudyTemplate({ study, project }: Props) {
             <div className={styles.featuredMedia}>
               <div className={styles.browserBar} aria-hidden="true">
                 <span /><span /><span />
-                <small>{project?.title}</small>
+                <small>{publicTitle}</small>
               </div>
               <div className={styles.featuredImage}>
                 <Image

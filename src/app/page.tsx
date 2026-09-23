@@ -12,6 +12,9 @@ import { FAQ } from "@/components/FAQ";
 import { Booking } from "@/components/Booking";
 import { Footer } from "@/components/Footer";
 
+const SHOW_CLIENT_FEEDBACK = false;
+const SHOW_CLIENT_LOGOS = false;
+
 export default function Home() {
   return (
     <>
@@ -19,9 +22,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <ClientMarquee />
+        {SHOW_CLIENT_LOGOS && <ClientMarquee />}
         <Projects />
-        <Testimonials />
+        {SHOW_CLIENT_FEEDBACK && <Testimonials />}
         <Services />
         <Experience />
         <Process />
@@ -34,4 +37,3 @@ export default function Home() {
     </>
   );
 }
-

@@ -11,6 +11,7 @@ import {
 import type { ServiceDetail } from "@/data/serviceDetails";
 import { data } from "@/data/portfolio";
 import { toSlug } from "@/lib/slug";
+import { getPublicProjectTitle } from "@/lib/projectPresentation";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -19,6 +20,7 @@ function RelatedProjectCard({ title }: { title: string }) {
   const [imgErr, setImgErr] = useState(false);
   if (!project) return null;
   const slug = toSlug(project.title);
+  const publicTitle = getPublicProjectTitle(project.title);
 
   return (
     <Link
@@ -31,7 +33,7 @@ function RelatedProjectCard({ title }: { title: string }) {
         {project.thumbnail && !imgErr ? (
           <Image
             src={project.thumbnail}
-            alt={project.title}
+            alt={publicTitle}
             fill
             className="object-cover object-top"
             onError={() => setImgErr(true)}
@@ -39,7 +41,7 @@ function RelatedProjectCard({ title }: { title: string }) {
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-6xl font-black opacity-10" style={{ color: "var(--accent)" }}>
-              {project.title[0]}
+              {publicTitle[0]}
             </span>
           </div>
         )}
@@ -59,7 +61,7 @@ function RelatedProjectCard({ title }: { title: string }) {
           className="text-sm font-bold mb-1.5 leading-snug"
           style={{ color: "var(--text)" }}
         >
-          {project.title}
+          {publicTitle}
         </h3>
         <p className="text-xs leading-relaxed flex-1" style={{ color: "var(--text-muted)" }}>
           {project.description}
