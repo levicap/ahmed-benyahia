@@ -2,7 +2,7 @@ import { data } from "@/data/portfolio";
 
 const MESSAGE = encodeURIComponent("Hi Ahmed, I have a question about a project.");
 
-/** Floating "Questions? WhatsApp" button shown on every page. */
+/** Compact WhatsApp shortcut shown on every page. */
 export function WhatsAppFab() {
   const base = data.social.whatsapp.split("?")[0];
   return (
@@ -14,7 +14,7 @@ export function WhatsAppFab() {
       </span>
       <span className="wa-txt">
         <span>Questions?</span>
-        <strong>WhatsApp me</strong>
+        <strong>WhatsApp</strong>
       </span>
     </a>
   );

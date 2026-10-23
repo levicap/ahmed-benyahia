@@ -320,6 +320,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 .dd-opt[aria-selected="true"] .ck { opacity: 1; transform: none; }
 .cform .full { grid-column: 1 / -1; }
 .cform .row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.form-status { max-width: 430px; font-size: 13px; color: var(--s-on-night-muted); }
+.form-status-success { color: #91dfaa; }
+.form-status-error { color: #ffad9f; }
+.cform .btn:disabled { cursor: wait; opacity: 0.68; }
+.cform .btn:disabled .arr { animation: s-send-pulse 1s ease-in-out infinite alternate; }
+@keyframes s-send-pulse { to { transform: translateX(4px); opacity: 0.55; } }
 
 /* footer */
 .foot { background: var(--s-night); color: var(--s-on-night-muted); border-top: 1px solid rgba(255, 247, 235, 0.12); }
@@ -527,21 +533,20 @@ html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 @media (hover: none) { .gal-side { opacity: 1; } }
 
 /* floating WhatsApp button */
-.wa-fab { position: fixed; z-index: 70; right: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 14px; min-height: 72px; padding: 8px 28px 8px 8px; border-radius: 999px; background: var(--s-ink); color: var(--s-bg) !important; box-shadow: 0 22px 48px -16px rgba(38, 35, 31, 0.6), 0 0 0 1px rgba(255, 247, 235, 0.08) inset; font-family: var(--s-body); text-decoration: none; transition: transform 0.3s var(--s-ease), box-shadow 0.3s; animation: s-fadeup 0.8s var(--s-ease) 1.2s both; }
-.wa-fab:hover { transform: translateY(-4px); box-shadow: 0 28px 56px -16px rgba(38, 35, 31, 0.65), 0 0 0 1px rgba(255, 247, 235, 0.12) inset; }
-.wa-ic { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; }
-.wa-ic svg { width: 30px; height: 30px; }
-.wa-ic::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25d366; animation: s-wa-ring 2.4s var(--s-ease) 2s infinite; }
-@keyframes s-wa-ring { 0% { transform: scale(1); opacity: 0.7; } 70%, 100% { transform: scale(1.45); opacity: 0; } }
-.wa-txt { display: flex; flex-direction: column; gap: 3px; line-height: 1.1; }
-.wa-txt span { font-size: 13px; color: var(--s-on-night-muted); }
-.wa-txt strong { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+.wa-fab { position: fixed; z-index: 70; right: 20px; bottom: 20px; display: inline-flex; align-items: center; gap: 12px; width: 250px; min-height: 62px; padding: 7px 20px 7px 7px; border-radius: 999px; background: var(--s-ink); color: var(--s-bg) !important; box-shadow: 0 16px 38px -16px rgba(38, 35, 31, 0.64), 0 0 0 1px rgba(255, 247, 235, 0.08) inset; font-family: var(--s-body); text-decoration: none; transition: transform 0.3s var(--s-ease), box-shadow 0.3s; animation: s-fadeup 0.8s var(--s-ease) 1.2s both; }
+.wa-fab:hover { transform: translateY(-2px); box-shadow: 0 18px 38px -16px rgba(38, 35, 31, 0.68), 0 0 0 1px rgba(255, 247, 235, 0.12) inset; }
+.wa-ic { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #25d366; color: #fff; }
+.wa-ic svg { width: 25px; height: 25px; }
+.wa-ic::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1px solid #25d366; animation: s-wa-ring 2.4s var(--s-ease) 2s infinite; }
+@keyframes s-wa-ring { 0% { transform: scale(1); opacity: 0.55; } 70%, 100% { transform: scale(1.28); opacity: 0; } }
+.wa-txt { display: flex; flex: 1; align-items: baseline; justify-content: center; gap: 6px; white-space: nowrap; line-height: 1; }
+.wa-txt span { font-size: 14px; color: var(--s-on-night-muted); }
+.wa-txt strong { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
 @media (max-width: 480px) {
-  .wa-fab { right: 14px; bottom: 14px; min-height: 60px; gap: 12px; padding: 6px 20px 6px 6px; }
-  .wa-ic { width: 48px; height: 48px; }
-  .wa-ic svg { width: 26px; height: 26px; }
-  .wa-txt span { font-size: 12px; }
-  .wa-txt strong { font-size: 16px; }
+  .wa-fab { right: 12px; bottom: 12px; width: min(250px, calc(100vw - 24px)); min-height: 56px; gap: 10px; padding: 6px 15px 6px 6px; }
+  .wa-ic { width: 44px; height: 44px; }
+  .wa-ic svg { width: 23px; height: 23px; }
+  .wa-txt { display: flex; }
 }
 @media (prefers-reduced-motion: reduce) { .wa-ic::after { animation: none; opacity: 0; } }
 
