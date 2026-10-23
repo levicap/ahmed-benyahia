@@ -139,6 +139,8 @@ export const serviceDetails: ServiceDetail[] = [
       { value: "95+", label: "Lighthouse performance score" },
     ],
     relatedProjects: [
+      "SmartPaie — Tunisian Payroll & CNSS SaaS",
+      "Keen Analytics — Privacy-First Web Analytics",
       "Postily – AI Social Media Platform",
       "APIspark – Drag & Drop API Builder",
       "Scenewear E-Commerce",
@@ -265,6 +267,8 @@ export const serviceDetails: ServiceDetail[] = [
       { value: "SOC-2", label: "Compliance-ready auth implementation" },
     ],
     relatedProjects: [
+      "SmartPaie — Tunisian Payroll & CNSS SaaS",
+      "Workforce Finance Reporting Dashboard",
       "OlalaHomes Property Dashboard",
       "Scenewear E-Commerce",
       "Postily – AI Social Media Platform",
@@ -306,6 +310,8 @@ export const serviceDetails: ServiceDetail[] = [
       { value: "100%", label: "Rollback coverage on every deploy" },
     ],
     relatedProjects: [
+      "Keen Analytics — Privacy-First Web Analytics",
+      "SmartPaie — Tunisian Payroll & CNSS SaaS",
       "APIspark – Drag & Drop API Builder",
       "Postily – AI Social Media Platform",
     ],
@@ -346,6 +352,7 @@ export const serviceDetails: ServiceDetail[] = [
       { value: "0", label: "Data loss incidents" },
     ],
     relatedProjects: [
+      "Workforce Finance Reporting Dashboard",
       "iPrint AI Voice & Chat Support Agent",
       "Tonic SMS Automation System",
       "Lead Acquisition System",

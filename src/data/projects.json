@@ -1,0 +1,611 @@
+[
+  {
+    "title": "Invoice Parsing & KPI Reporting Dashboard",
+    "slug": "invoice-parsing-kpi-reporting-dashboard",
+    "description": "A finance operations dashboard that turns messy invoice inputs into one clean, Airtable-ready format. It combines parsing, Supabase storage, Airtable sync, and Recharts KPIs so teams can review invoice flow and reporting from one place.",
+    "problem": "The client was receiving invoice data in inconsistent formats and had no reliable way to normalize records, sync the approved version into Airtable, or understand invoice activity and KPI trends from one dashboard.",
+    "solution": "Built a Next.js dashboard backed by Supabase that parses incoming invoices, converts them into a unified schema, saves the normalized output to Airtable, and presents operational metrics through Recharts visualizations.",
+    "solutionBullets": [
+      "Invoice parsing flow that standardizes inconsistent source formats",
+      "Unified invoice schema stored and synced across Supabase and Airtable",
+      "Airtable integration for client-facing record management",
+      "KPI dashboard with Recharts charts and summary metrics",
+      "Next.js interface for reviewing parsed invoice data before handoff"
+    ],
+    "results": "The client gained a single workflow for turning messy invoice inputs into clean, Airtable-ready records. Manual formatting work was removed, and KPI visibility moved from scattered checks to one reporting dashboard.",
+    "thumbnail": "/reporting .png",
+    "tags": ["Next.js", "Supabase", "Airtable API", "Recharts", "TypeScript"],
+    "category": "SaaS",
+    "liveUrl": "",
+    "githubUrl": "",
+    "featured": true
+  },
+  {
+    "title": "Workforce Second Brain Automation Layer",
+    "slug": "workforce-second-brain-automation-layer",
+    "description": "A controlled company-memory layer for Workforce that connects meetings, Slack approvals, WhatsApp/Spott communication, and a Git-backed knowledge vault. It turns approved operational signals into sanitized Markdown knowledge while keeping source systems authoritative.",
+    "problem": "Workforce needed a way to capture operational knowledge from live communication channels — meetings, approvals, team messages — and store it in a structured, reviewable vault without polluting source systems or relying on manual documentation.",
+    "solution": "Built a multi-source automation layer that ingests signals from Fathom meeting transcripts, Slack, WhatsApp, and Spott, runs them through a sanitization and review flow, and commits approved knowledge to a Git-backed Markdown vault.",
+    "solutionBullets": [
+      "Fathom API integration for automated meeting transcript ingestion",
+      "Slack and WhatsApp signal capture with approval gates",
+      "Spott API integration for recruiting signal extraction",
+      "Git-backed Markdown knowledge vault with commit history",
+      "Gemini-powered summarization and knowledge structuring",
+      "Docker-hosted MCP server layer for secure vault access"
+    ],
+    "results": "Workforce now has a continuously updated, reviewed knowledge base that reflects actual operational decisions — built from live signals rather than manual entry, with full traceability back to the source event.",
+    "thumbnail": "/second brain workforce.png",
+    "tags": ["Next.js", "Node.js", "Go", "Docker", "SQLite", "n8n", "Fathom API", "Slack API", "GitHub API", "Spott API", "WhatsApp", "Gemini API"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": "",
+    "featured": true
+  },
+  {
+    "title": "Finoria ERP",
+    "slug": "finoria-erp",
+    "description": "A desktop ERP that gives small businesses one local system for sales, purchases, stock, and payment tracking. Built with Electron.js and SQLite so teams can run daily operations reliably without spreadsheets or internet-dependent tools.",
+    "problem": "Small businesses managing sales, inventory, and payments across spreadsheets had no single offline-capable system to run daily operations — leaving them dependent on fragile manual processes and unreliable internet-dependent tools.",
+    "solution": "Built a full desktop ERP with Electron.js and SQLite covering sales management, purchase tracking, stock control, and payment recording — deployable locally with no cloud dependency.",
+    "solutionBullets": [
+      "Sales and purchase order management in one interface",
+      "Real-time stock tracking with low-inventory alerts",
+      "Payment tracking with status management per transaction",
+      "SQLite local storage — fully offline and internet-independent",
+      "Electron.js packaging for cross-platform desktop deployment"
+    ],
+    "results": "The client replaced disconnected spreadsheets with a single desktop system for all core operations. Daily workflows became measurably faster and the business now runs without reliance on cloud tools or internet connectivity.",
+    "thumbnail": "/finoria.png",
+    "tags": ["Electron.js", "SQLite", "JavaScript", "ERP", "Desktop App"],
+    "category": "Desktop App",
+    "liveUrl": "",
+    "githubUrl": "",
+    "featured": true
+  },
+  {
+    "title": "Gantic to Spott CRM Migration Sync",
+    "slug": "gantic-to-spott-crm-migration-sync",
+    "description": "A CRM migration automation that keeps candidate records moving from Gantic into Spott without manual exports. The workflow maps fields, avoids duplicate records, and protects recruiting operations while the client moves to a new CRM.",
+    "problem": "A client was moving candidate operations from Gantic CRM to Spott CRM and needed to keep candidate records moving into the new system without relying on manual export, cleanup, and re-entry during the migration window.",
+    "solution": "Built an automation that reads candidate data from Gantic CRM, maps the fields into Spott's expected structure, deduplicates records, and syncs qualified candidate information into Spott CRM with controlled error handling.",
+    "solutionBullets": [
+      "Candidate sync from Gantic CRM into Spott CRM",
+      "Field mapping between old and new CRM data models",
+      "Deduplication checks to avoid duplicated candidate records",
+      "Automated migration workflow with retry-safe handoff",
+      "Operational logging for sync visibility during the CRM transition"
+    ],
+    "results": "The migration workflow kept candidate data flowing into the new CRM without manual copy-paste. The client could move teams onto Spott while preserving source data quality and reducing migration overhead.",
+    "thumbnail": "/gantictospottcrm.png",
+    "tags": ["n8n", "Gantic CRM", "Spott API", "CRM Automation", "Webhooks"],
+    "category": "Automation",
+    "liveUrl": "",
+    "githubUrl": "",
+    "featured": true
+  },
+  {
+    "title": "Meeting Transcript to Asana Workflow",
+    "slug": "meeting-transcript-to-asana-workflow",
+    "description": "A meeting-to-execution workflow that converts transcript notes into structured Asana tasks. It extracts action items, owners, and context so decisions made in meetings become trackable work instead of forgotten notes.",
+    "problem": "Meeting decisions and action items were being lost between calls and project execution. The client needed tasks from meeting transcripts to appear in Asana with enough structure for the team to act on them.",
+    "solution": "Built a meeting transcript workflow that extracts tasks, owners, and follow-up items from transcripts, then updates the relevant Asana boards so work created in meetings becomes trackable execution automatically.",
+    "solutionBullets": [
+      "Transcript ingestion and preprocessing workflow",
+      "Task and action-item extraction with AI assistance",
+      "Owner and context detection from meeting language",
+      "Asana board updates with structured task records",
+      "Workflow pairing with the client's daily Asana digest automation"
+    ],
+    "results": "The client closed the gap between meeting notes and project management. Action items now land in Asana automatically, making meetings easier to operationalize and reducing missed follow-through.",
+    "thumbnail": "/meeting transcipt .png",
+    "tags": ["n8n", "Asana API", "OpenAI API", "Transcription", "Webhooks"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "Asana Board Daily Update Digest",
+    "slug": "asana-board-daily-update-digest",
+    "description": "A daily operations digest for Asana boards that turns task changes into a clear morning summary. It helps the client see what moved, what is blocked, and where follow-up is needed without manually checking every board.",
+    "problem": "The client needed a reliable way to understand what changed across Asana boards without manually checking every task, comment, status update, and assignment each morning.",
+    "solution": "Built an automation that monitors Asana boards for task updates, summarizes the meaningful changes, and sends a daily morning email digest that highlights what moved, what needs attention, and where follow-up is required.",
+    "solutionBullets": [
+      "Asana board monitoring for task and status changes",
+      "AI-generated daily summary of meaningful updates",
+      "Morning email delivery to the client team",
+      "Filtering logic to reduce noise from low-value changes",
+      "Reusable workflow for multiple boards and workstreams"
+    ],
+    "results": "The team now receives a concise operational digest each morning instead of reviewing boards manually. Stakeholders stay aligned on task movement, blockers, and follow-ups without adding another reporting habit.",
+    "thumbnail": "/asana board.png",
+    "tags": ["n8n", "Asana API", "OpenAI API", "Gmail", "Webhooks"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "AI Career Path Mapper",
+    "slug": "ai-career-path-mapper",
+    "description": "An AI career planning platform that turns a user's current role and target job into a practical roadmap. It identifies skill gaps, recommends learning paths, and gives job seekers a structured plan instead of generic career advice.",
+    "problem": "Job seekers lack visibility into the specific skills and steps needed to move from their current role to their target position. Generic online advice doesn't account for individual background, and the research process alone can take days with no actionable output.",
+    "solution": "Built an AI-powered platform that analyzes a user's current role and target career goal, generates a personalized step-by-step roadmap with identified skill gaps, and curates exactly the right learning resources to close them.",
+    "solutionBullets": [
+      "Role-to-role skill gap analysis powered by Gemini",
+      "Personalized 90-day learning roadmap generation",
+      "Curated course and resource recommendations per gap",
+      "Clean, shareable career plan output",
+      "Full TypeScript API with Next.js frontend"
+    ],
+    "results": "Users receive a complete, actionable career plan in under 30 seconds — replacing days of manual research. The platform delivers clarity and structure where generic career advice fails, giving users a focused path with measurable milestones.",
+    "thumbnail": "/carrer.png",
+    "tags": ["Next.js", "Express.js", "Gemini API", "TypeScript"],
+    "category": "AI Tool",
+    "liveUrl": "https://ai-path-carrer-generator.vercel.app/",
+    "githubUrl": "https://github.com/levicap/ai-path-carrer-generator"
+  },
+  {
+    "title": "AI Motivation Letter Generator",
+    "slug": "ai-motivation-letter-generator",
+    "description": "A job application tool that generates 10 tailored, ATS-friendly motivation letters for a specific company and role. It saves applicants hours of writing while giving them polished PDF/Word-ready options.",
+    "problem": "Job applicants spend hours writing motivation letters that still feel generic and fail ATS screening. A single application can take 2+ hours of writing, and most candidates submit letters that don't stand out or pass automated filters.",
+    "solution": "Built a platform that generates 10 ATS-optimized motivation letter variations tailored to the specific role, company, and position — each exportable to PDF or Word in one click using Gemini's language model.",
+    "solutionBullets": [
+      "10 unique, non-repetitive letter variations per submission",
+      "ATS optimization baked into every generated output",
+      "Role, company, and position context awareness",
+      "One-click export to PDF and Word",
+      "Gemini-powered tone and style matching"
+    ],
+    "results": "Application writing time reduced from 2+ hours to under 60 seconds. Users receive 10 polished, ATS-compliant letter options instantly — increasing interview callback rates through better-targeted, professionally written content.",
+    "thumbnail": "/motivation.png",
+    "tags": ["Next.js", "Express.js", "Gemini API", "TypeScript"],
+    "category": "AI Tool",
+    "liveUrl": "https://motivation-letter-ai.vercel.app/",
+    "githubUrl": "https://github.com/levicap/motivationletteraiapi"
+  },
+  {
+    "title": "Postily – AI Social Media Platform",
+    "slug": "postily-ai-social-media-platform",
+    "description": "A social media SaaS that helps teams create, schedule, and analyze posts from one workspace. AI captions, image generation, campaign planning, and analytics reduce the manual work behind consistent publishing.",
+    "problem": "Social media managers manually create content for multiple platforms, spending hours per post on captions and creative — with no unified scheduling tool and no analytics to understand what's actually working.",
+    "solution": "Built a full SaaS platform with AI-generated captions and images, multi-platform scheduling, and an analytics dashboard that tracks performance across all channels from a single workspace.",
+    "solutionBullets": [
+      "AI caption and image generation per platform",
+      "Multi-platform scheduling and queue management",
+      "Full analytics dashboard with engagement metrics",
+      "Campaign management workspace for teams",
+      "MongoDB-backed content history and versioning"
+    ],
+    "results": "Content creation time reduced by 70%. Teams maintain consistent, high-quality posting schedules across platforms without manual effort, while unified analytics provide the visibility needed to optimize future campaigns.",
+    "thumbnail": "/postily.png",
+    "tags": ["Next.js", "MongoDB", "OpenAI API"],
+    "category": "SaaS",
+    "liveUrl": "",
+    "githubUrl": "https://github.com/ahmedbenyahia/postily"
+  },
+  {
+    "title": "APIspark – Drag & Drop API Builder",
+    "slug": "apispark-drag-drop-api-builder",
+    "description": "A visual API builder that lets developers design backend flows with drag-and-drop blocks, AI-generated code, and automatic documentation. It shortens the repetitive setup phase before real business logic begins.",
+    "problem": "Backend developers waste hours writing boilerplate CRUD code, schema definitions, and API documentation at the start of every project — slowing down the most repetitive, low-value phase of development.",
+    "solution": "Built a visual SaaS platform where developers design APIs by dragging and connecting components. AI-assisted code generation produces clean output for each component, while the platform auto-generates full OpenAPI documentation.",
+    "solutionBullets": [
+      "Visual drag-and-drop API design canvas",
+      "AI code generation for endpoints and schemas",
+      "Automatic OpenAPI documentation generation",
+      "Prisma-backed data modeling and migrations",
+      "One-click deployment pipeline"
+    ],
+    "results": "API scaffolding time cut from hours to under 15 minutes. Developers skip boilerplate entirely and go directly to business logic — dramatically accelerating the early stage of every project without sacrificing code quality.",
+    "thumbnail": "/apisparkp.png",
+    "tags": ["Next.js", "Node.js", "Prisma", "AI"],
+    "category": "SaaS",
+    "liveUrl": "https://apisparkdev.vercel.app/",
+    "githubUrl": "https://github.com/levicap/apispark-saas"
+  },
+  {
+    "title": "Scenewear E-Commerce",
+    "slug": "scenewear-e-commerce",
+    "description": "A full e-commerce platform for a local clothing brand, covering catalog browsing, cart flow, and order management. It moved the business from manual social-media orders into a scalable online storefront.",
+    "problem": "Scenewear, a growing local clothing brand, had no online storefront. Customers placed orders via Instagram DMs, creating a manual, unscalable process that capped revenue and required constant owner involvement.",
+    "solution": "Built a full-featured e-commerce platform with product catalog, shopping cart, secure checkout, and order management — powered by a Next.js frontend, Spring Boot REST API, and PostgreSQL database.",
+    "solutionBullets": [
+      "Product catalog with filtering, search, and variants",
+      "Shopping cart and order management system",
+      "Secure checkout flow with payment integration",
+      "Spring Boot REST API with PostgreSQL backend",
+      "Admin dashboard for inventory and order tracking"
+    ],
+    "results": "Scenewear went from manual DM orders to a fully operational online store in 3 weeks. The platform handles their complete catalog and processes orders end-to-end without any manual intervention from the owner.",
+    "thumbnail": "/scenewear.png",
+    "tags": ["Next.js", "Spring Boot", "PostgreSQL"],
+    "category": "E-Commerce",
+    "liveUrl": "https://scenewear-ecommerce.vercel.app/",
+    "githubUrl": "https://github.com/levicap/scenewear-ecommerce"
+  },
+  {
+    "title": "MiniSport Internal RAG Assistant",
+    "slug": "minisport-internal-rag-assistant",
+    "description": "An internal RAG assistant that lets the MiniSport team ask questions across company documentation in natural language. It reduces time spent searching docs and gives staff faster, more consistent answers.",
+    "problem": "MiniSport's support and operations team spent significant time searching through internal documentation to answer questions about products, policies, and procedures — creating slow, inconsistent responses and operational drag.",
+    "solution": "Built an internal RAG assistant using n8n and OpenAI that ingests company documents, creates vector embeddings, and allows staff to query any documentation in plain English — returning accurate, context-aware answers in seconds.",
+    "solutionBullets": [
+      "Automated document ingestion and re-indexing pipeline",
+      "Vector database for semantic document search",
+      "Conversational query interface for the full team",
+      "n8n orchestration with webhook-based triggers",
+      "OpenAI-powered natural language response generation"
+    ],
+    "results": "Internal documentation queries reduced by 60%. Staff now get accurate answers in seconds instead of minutes, and the system stays current through automated document re-ingestion — eliminating the risk of outdated information being shared.",
+    "thumbnail": "/minisport-rag.png",
+    "tags": ["n8n", "OpenAI API", "Vector Database", "Webhooks"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "BookieLink Customer Support Bot",
+    "slug": "bookielink-customer-support-bot",
+    "description": "A RAG-powered support bot trained on thousands of BookieLink Q&A records. It handles repetitive customer questions automatically, reduces support tickets, and frees the team for higher-value cases.",
+    "problem": "BookieLink's support volume exceeded what their small team could manage. Repetitive questions were consuming hours daily, delaying responses to complex cases that genuinely required human attention.",
+    "solution": "Built a RAG-powered support chatbot trained on 5,000+ Q&A pairs covering BookieLink's full product surface — deployed as a front-line agent capable of handling the majority of incoming queries autonomously.",
+    "solutionBullets": [
+      "5,000+ Q&A dataset for RAG training",
+      "Vector-based semantic similarity search",
+      "Automatic escalation for unrecognized queries",
+      "Webhook-based deployment and session management",
+      "OpenAI-powered natural language response layer"
+    ],
+    "results": "The bot achieves 85% query accuracy and reduced support tickets by 70% in the first month. The team now handles only complex escalations — recovering hours of daily capacity that were previously consumed by repetitive queries.",
+    "thumbnail": "/bookilink-bot.png",
+    "tags": ["n8n", "OpenAI API", "Vector Database", "Webhooks"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "iPrint AI Voice & Chat Support Agent",
+    "slug": "iprint-ai-voice-chat-support-agent",
+    "description": "A combined chat and voice support agent for iPrint using ElevenLabs, Twilio, and payment integrations. It handles high-volume customer requests, improves response speed, and keeps sales/support actions inside one conversation.",
+    "problem": "iPrint received over 500 customer queries daily across chat and phone. Their small support team couldn't keep pace, resulting in long wait times, missed follow-ups, and a deteriorating customer experience.",
+    "solution": "Built a combined AI support system: a chat agent for text queries and an ElevenLabs + Twilio voice agent for phone calls — both integrated with Stripe for real-time payment processing and automated appointment scheduling.",
+    "solutionBullets": [
+      "AI chat agent handling all inbound text queries",
+      "ElevenLabs voice agent for natural phone interactions",
+      "Stripe payment integration inside the conversation flow",
+      "Automated booking and appointment scheduling",
+      "500+ daily query capacity without human involvement"
+    ],
+    "results": "Response time improved by 45%. 500+ daily queries are now handled autonomously across chat and voice. Human agents focus only on escalated edge cases, while Stripe integration converts support interactions into direct revenue opportunities.",
+    "thumbnail": "/iprint-chatbot.png",
+    "tags": ["n8n", "ElevenLabs", "Twilio", "OpenAI API"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "Lead Acquisition System",
+    "slug": "lead-acquisition-system",
+    "description": "A lead acquisition pipeline that scrapes, enriches, qualifies, and formats prospects from Upwork, GitHub, and Indeed. It gives sales/recruiting teams CRM-ready records instead of hours of manual sourcing.",
+    "problem": "Sales and recruiting teams spent 80% of their prospecting time on manual sourcing — searching job boards, qualifying candidates, finding contact details, and entering data by hand. High effort, low throughput.",
+    "solution": "Built a fully automated lead pipeline using n8n that scrapes Upwork, GitHub, and Indeed, runs LLM-based qualification against defined criteria, enriches each lead with Apollo contact data, and inserts ready records into the CRM.",
+    "solutionBullets": [
+      "Multi-source scraping across Upwork, GitHub, and Indeed",
+      "LLM-based lead qualification against custom criteria",
+      "Apollo API integration for contact enrichment",
+      "Automated CRM insertion with deduplication",
+      "Configurable qualification rules for different roles"
+    ],
+    "results": "Manual screening time reduced by 80%. The team now wakes up to a warm, pre-qualified, enriched lead list every morning — eliminating manual sourcing entirely and redirecting hours toward relationship-building and closing.",
+    "thumbnail": "/leads.png",
+    "tags": ["n8n", "Web Scraping", "Apollo API", "LLM"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "Tonic SMS Automation System",
+    "slug": "tonic-sms-automation-system",
+    "description": "A campaign automation system that connects Kit.com and Twilio to send targeted SMS at scale. It gives marketing teams a repeatable way to reach subscribers, track delivery, and run campaigns without manual sending.",
+    "problem": "Tonic needed to reach 10,000+ subscribers with targeted SMS campaigns but had no system for automating delivery at scale, managing campaign sequences, or tracking response behaviour without manual effort.",
+    "solution": "Integrated Kit.com subscriber management with Twilio's SMS API through n8n — enabling automated campaign scheduling, subscriber segmentation, and delivery tracking across the full subscriber base.",
+    "solutionBullets": [
+      "Kit.com subscriber sync and segmentation",
+      "Twilio SMS delivery engine at 10K+ subscriber scale",
+      "n8n workflow orchestration for campaign sequencing",
+      "Campaign scheduling with time-zone awareness",
+      "Delivery and response tracking per campaign"
+    ],
+    "results": "98% deliverability across 10,000+ subscribers. Campaigns launch and execute entirely on autopilot from a single trigger — Tonic's team went from manual sending to a fully managed, measurable SMS operation.",
+    "thumbnail": "/tonic.png",
+    "tags": ["n8n", "Twilio", "Kit.com", "Webhooks"],
+    "category": "Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "AI Book Writing Agent",
+    "slug": "ai-book-writing-agent",
+    "description": "An AI writing workflow that turns raw transcripts into structured book chapters with consistent tone and organization. It helps authors move from spoken ideas to review-ready manuscript drafts much faster.",
+    "problem": "An author with hours of recorded transcripts had no efficient way to convert raw spoken content into a structured, commercially publishable book — a process that traditionally requires weeks of editorial effort.",
+    "solution": "Built an n8n-based AI agent that ingests uploaded transcripts, segments content by topic, generates structured chapters with consistent tone and style, and outputs a formatted manuscript ready for final review.",
+    "solutionBullets": [
+      "Transcript ingestion and preprocessing pipeline",
+      "Topic segmentation and chapter structure mapping",
+      "GPT-4-powered chapter content generation",
+      "Tone and style consistency enforcement across chapters",
+      "Formatted manuscript output ready for review"
+    ],
+    "results": "A full book manuscript was generated from raw transcripts in hours, not weeks. The author reviewed and approved with minimal edits — compressing an editorial cycle that normally spans months into a single automated workflow.",
+    "thumbnail": "/book.png",
+    "tags": ["n8n", "OpenAI API", "Prompt Orchestration"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "SEO Content & Webflow Automation",
+    "slug": "seo-content-webflow-automation",
+    "description": "An SEO publishing automation that researches a target vertical, writes optimized articles, generates matching images, and updates Webflow CMS. It turns content production into a repeatable pipeline instead of a manual publishing process.",
+    "problem": "Content teams spend days per article — researching topics, writing copy, generating visuals, and manually updating their website. This bottleneck caps publishing frequency and limits organic search growth.",
+    "solution": "Built an end-to-end automation that takes a target vertical, researches the topic, writes SEO-optimized long-form content, generates matching images via AI, and publishes directly to a Webflow CMS template — zero manual steps.",
+    "solutionBullets": [
+      "Automated topic research and keyword targeting",
+      "SEO-optimized long-form content generation",
+      "AI image generation matched to each article",
+      "Webflow CMS API publishing with template layout",
+      "Fully hands-off from trigger to published post"
+    ],
+    "results": "Content production cost reduced to near-zero per article. Publishing frequency scaled from a few articles per week to daily automated output — dramatically expanding SEO surface area without adding headcount or editorial overhead.",
+    "thumbnail": "/seo.png",
+    "tags": ["n8n", "OpenAI API", "Webflow API", "Image Generation"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "OlalaHomes Property Dashboard",
+    "slug": "olalahomes-property-dashboard",
+    "description": "A property management dashboard for OlalaHomes that centralizes rentals, occupancy, revenue, and maintenance activity. It replaces spreadsheet reporting with one operational view for faster property decisions.",
+    "problem": "OlalaHomes managed their rental portfolio across disconnected spreadsheets and tools — with no unified view of occupancy rates, rental revenue, tenant status, or maintenance requests across their properties.",
+    "solution": "Built a custom property management dashboard with interactive Recharts visualizations, tracking occupancy, revenue, tenant records, and maintenance requests — backed by a PostgreSQL database and Next.js frontend.",
+    "solutionBullets": [
+      "Occupancy and revenue tracking across all properties",
+      "Maintenance request logging and status management",
+      "Tenant and lease record management",
+      "Interactive Recharts data visualizations and trend views",
+      "PostgreSQL backend with real-time data sync"
+    ],
+    "results": "15+ hours per week saved on manual reporting. OlalaHomes now has a single source of truth for their entire portfolio — with the metrics and operational visibility needed to make faster, more informed property decisions.",
+    "thumbnail": "/olalahomes.png",
+    "tags": ["Next.js", "PostgreSQL", "Recharts", "TypeScript"],
+    "category": "SaaS",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "Ghanem Labs — Web3 Audit SaaS",
+    "slug": "ghanem-labs-web3-audit-saas",
+    "description": "A Web3 intelligence SaaS for smart contract audits, tokenomics checks, and on-chain threat detection. It turns complex blockchain risk signals into clear reports investors can use before committing capital.",
+    "problem": "Crypto investors had no accessible tool to assess smart contract security, tokenomics health, or on-chain threats before committing capital — forcing reliance on expensive third-party auditors or uninformed guesswork.",
+    "solution": "Built a SaaS platform that runs automated smart contract security scans, tokenomics analysis, and on-chain threat detection — returning clear risk scores and AI-generated reports any investor can act on immediately.",
+    "solutionBullets": [
+      "Automated smart contract vulnerability scanning",
+      "Tokenomics health scoring and red flag detection",
+      "On-chain threat signal monitoring",
+      "OpenAI-powered risk report generation",
+      "Investor-facing dashboard with actionable risk signals"
+    ],
+    "results": "Security intelligence that previously took weeks of manual auditing is now generated in minutes. Investors access structured, actionable reports before deploying capital — reducing risk exposure and improving portfolio decision quality.",
+    "thumbnail": "/ghanemlabs.png",
+    "tags": ["Next.js", "Node.js", "Web3", "OpenAI API", "TypeScript"],
+    "category": "SaaS",
+    "liveUrl": "https://www.ghanemlab.com/",
+    "githubUrl": ""
+  },
+  {
+    "title": "Outreach Genie — LinkedIn Outbound SaaS",
+    "slug": "outreach-genie-linkedin-outbound-saas",
+    "description": "A LinkedIn outbound workspace for prospect lists, team access, campaign tracking, and AI-assisted messaging. It helps sales teams run outreach with pipeline clarity instead of scattered spreadsheets and notes.",
+    "problem": "Sales teams and recruiters conducting LinkedIn outreach managed prospect lists in spreadsheets, tracked follow-ups in notes, and ran campaigns across disconnected tools — with no pipeline visibility and no consistency.",
+    "solution": "Built a LinkedIn outreach SaaS providing a centralized workspace for managing prospect lists, AI-assisted personalized messaging, team access controls, and full campaign pipeline tracking — with LinkedIn API integration.",
+    "solutionBullets": [
+      "Centralized prospect list management workspace",
+      "AI-assisted personalized message generation",
+      "Team access management with role-based controls",
+      "LinkedIn API integration for real-time data",
+      "Campaign pipeline tracking and analytics dashboard"
+    ],
+    "results": "Outreach capacity increased 10x. Teams now manage full LinkedIn campaigns from a single platform — with AI messaging improving connection acceptance rates and pipeline tracking ensuring no follow-up falls through.",
+    "thumbnail": "/outreach.png",
+    "tags": ["Next.js", "PostgreSQL", "LinkedIn API", "OpenAI API"],
+    "category": "SaaS",
+    "liveUrl": "https://www.outreachgenie.ai/",
+    "githubUrl": ""
+  },
+  {
+    "title": "AI Book Recommendation Automation",
+    "slug": "ai-book-recommendation-automation",
+    "description": "A personalized recommendation workflow for aisr.qa that combines user job data with an AI interview. It returns eight role-relevant book picks, making recommendations feel curated without manual research.",
+    "problem": "aisr.qa needed a scalable way to deliver personalized book recommendations based on each user's job role and goals — without a manual curation process that couldn't scale to their growing user base.",
+    "solution": "Built an n8n automation that queries the user database for professional context, conducts an AI-powered conversational interview to surface goals and challenges, and returns 8 curated book recommendations precisely matched to each user.",
+    "solutionBullets": [
+      "Automated user data query from the database",
+      "AI conversational interview pipeline via n8n",
+      "Context-aware book recommendation generation",
+      "8 tailored recommendations per user per run",
+      "Webhook-triggered delivery on user request"
+    ],
+    "results": "Every user receives fully personalized recommendations at scale with zero manual curation. The AI interview step grounds recommendations in each user's actual situation — going far beyond job title to deliver genuinely relevant results.",
+    "thumbnail": "/bookrecomendation.png",
+    "tags": ["n8n", "OpenAI API", "Database Query", "Webhooks"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "TechForce GitHub Developer Sourcing",
+    "slug": "techforce-github-developer-sourcing",
+    "description": "A recruiting pipeline for TechForce that reads open job locations, finds matching GitHub developers by city, and syncs qualified profiles into Gospott CRM. It turns location-based sourcing into a repeatable automated workflow.",
+    "problem": "TechForce's recruiting team spent hours per open role manually searching GitHub for developers by location — a high-volume, repetitive task consuming capacity that should be focused on relationship-building and conversion.",
+    "solution": "Built an automated sourcing pipeline that reads open job locations from Supabase, scrapes GitHub for matching developers by city and role, qualifies profiles against defined criteria, and syncs enriched records directly into Gospott CRM.",
+    "solutionBullets": [
+      "Supabase integration to read open job location data",
+      "GitHub developer scraping by city and skill match",
+      "Automated profile qualification against hiring criteria",
+      "Gospott CRM sync with deduplication",
+      "Daily automated pipeline execution with no manual steps"
+    ],
+    "results": "Manual developer sourcing was eliminated entirely. TechForce's team now starts every day with a pre-filled CRM of qualified, location-matched developer profiles — reclaiming hours previously lost to repetitive search work.",
+    "thumbnail": "/leads.png",
+    "tags": ["n8n", "GitHub API", "Supabase", "Gospott CRM", "Web Scraping"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "TechForce Indeed Jobs Enrichment Pipeline",
+    "slug": "techforce-indeed-jobs-enrichment-pipeline",
+    "description": "An Indeed-to-CRM enrichment pipeline that scrapes job listings, syncs them to Clarify, and adds verified contact data from Apollo. It gives TechForce warmer outreach records with less manual research.",
+    "problem": "TechForce's outreach lists were cold — scraped from job boards without verified contact data. Low delivery rates, zero personalization, and poor conversion were the result of reaching out with incomplete information.",
+    "solution": "Built an n8n automation that scrapes job listings from Indeed, syncs them into Clarify CRM, and enriches each record with verified decision-maker contact data and emails via Apollo — creating a warm pipeline automatically.",
+    "solutionBullets": [
+      "Automated Indeed job listing scraper",
+      "Clarify CRM sync with deduplication logic",
+      "Apollo API integration for contact enrichment",
+      "Verified email and decision-maker data per record",
+      "Daily automated pipeline with no manual intervention"
+    ],
+    "results": "TechForce's outreach pipeline now runs on autopilot. Every record arrives in Clarify CRM fully enriched with verified contact data — eliminating cold outreach and enabling high-deliverability campaigns from the first touchpoint.",
+    "thumbnail": "/leads.png",
+    "tags": ["n8n", "Indeed Scraping", "Apollo API", "Clarify CRM", "Web Scraping"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "Upwork Jobs Scraper & Contact Enrichment",
+    "slug": "upwork-jobs-scraper-contact-enrichment",
+    "description": "A Chrome extension and n8n pipeline for capturing Upwork jobs, enriching leads, and preparing outreach records. It helps freelancers and agencies move from job discovery to qualified contact lists faster.",
+    "problem": "Freelancers and agencies monitoring Upwork for new clients wasted hours manually reviewing job posts, researching client contact info, and building outreach lists — with no automation and no scalable system.",
+    "solution": "Built a Chrome extension that captures Upwork job listings in one click and forwards them to an n8n pipeline that automatically enriches each lead with verified emails via FindMyEmail and Apollo — outputting a ready-to-contact outreach list.",
+    "solutionBullets": [
+      "Chrome extension for one-click Upwork lead capture",
+      "n8n pipeline for automated downstream enrichment",
+      "FindMyEmail API integration for email discovery",
+      "Apollo API for contact verification and enrichment",
+      "CRM-ready outreach list output with verified contacts"
+    ],
+    "results": "Lead list building reduced from hours to seconds. Every captured Upwork listing is automatically enriched with verified contact data — enabling immediate, targeted outreach without any manual lookup or data entry.",
+    "thumbnail": "/upwork.png",
+    "tags": ["Chrome Extension", "n8n", "FindMyEmail", "Apollo API", "Web Scraping"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "title": "Strategy Navigator — AI SaaS Platform",
+    "slug": "strategy-navigator-ai-saas-platform",
+    "description": "A multi-tenant strategy SaaS with RBAC, AI assistants, analytics, and billing. It gives teams one structured workspace for planning and tracking strategy instead of spreading decisions across slides, spreadsheets, and disconnected tools.",
+    "problem": "Strategy teams were operating across a fragmented stack — slides in one place, spreadsheets in another, OKRs tracked in a third tool nobody kept updated. There was no single workspace where strategy could live, evolve, and be acted on.",
+    "solution": "Built a multi-tenant SaaS platform where strategy teams can plan, track, and adapt their work in one place — with RBAC, AI assistants for insight generation, OKR analytics dashboards, and Stripe subscription billing.",
+    "solutionBullets": [
+      "Multi-tenant architecture with full team and workspace isolation",
+      "RBAC with granular permission levels across roles",
+      "AI assistant integration for strategy drafting and insight generation",
+      "Analytics dashboard tracking OKRs, milestones, and initiative health",
+      "Stripe billing integration supporting tiered subscription plans",
+      "React frontend with Node.js backend and OpenAI API"
+    ],
+    "results": "The platform shipped to production with active users running real strategy cycles through it. Teams replaced their fragmented tool stack with a single, structured workspace — and the AI layer cut strategy document writing time by a meaningful margin.",
+    "thumbnail": "/strategy-saas.png",
+    "tags": ["React", "Node.js", "OpenAI API", "TypeScript"],
+    "category": "SaaS",
+    "liveUrl": "https://strategynavigator.ai/",
+    "githubUrl": ""
+  },
+  {
+    "title": "JourneyAI — AI Sales Assistant Platform",
+    "slug": "journeyai-ai-sales-assistant-platform",
+    "description": "An AI sales assistant platform that supports reps before and after calls with meeting prep, summaries, and follow-up drafts. Real-time workflows reduce admin work so sales teams can spend more time on active conversations.",
+    "problem": "Sales reps were losing hours every week on work that happened around the meeting — not in it. Preparing context before a call, writing summaries after, drafting follow-up emails, logging notes to the CRM. It was overhead that compounded across every rep on the team.",
+    "solution": "Built JourneyAI as a suite of AI assistants purpose-built for the sales workflow — meeting prep briefs, post-call summaries, and follow-up email drafts, all running in real time via WebSocket connections.",
+    "solutionBullets": [
+      "AI-powered meeting prep briefs with prospect and deal context",
+      "Automated post-call summaries with structured key takeaways",
+      "Follow-up email generation tailored to each conversation",
+      "Real-time capabilities via WebSocket for live assistant interactions",
+      "Next.js frontend with Node.js backend and OpenAI API",
+      "Deployed to production with active sales teams using it daily"
+    ],
+    "results": "JourneyAI is live and being used in production sales workflows. Reps spend less time on administrative overhead and more time on actual conversations. The assistant suite handled the full pre-to-post meeting cycle.",
+    "thumbnail": "/journeyai-saas.png",
+    "tags": ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
+    "category": "SaaS",
+    "liveUrl": "https://meetjourney.ai/",
+    "githubUrl": ""
+  },
+  {
+    "title": "SaleSide AI — Sales Meeting Assistant",
+    "slug": "saleside-ai-sales-meeting-assistant",
+    "description": "A sales meeting intelligence platform that captures transcripts, objections, summaries, and action items. It preserves the value of each customer conversation and removes manual note-taking from the sales workflow.",
+    "problem": "Sales teams were walking out of meetings with scattered notes, forgotten objections, and follow-up actions that never got tracked. The knowledge from a good sales call was living in someone's head or a half-filled notes doc — and most of it was lost within 24 hours.",
+    "solution": "Built SaleSide AI to capture and structure everything that matters in a sales meeting — automated transcription, real-time objection detection, AI summary generation, and action item extraction with ownership assignment.",
+    "solutionBullets": [
+      "Automated meeting transcription with full session capture",
+      "Real-time objection detection and categorisation",
+      "AI-generated meeting summaries with structured key points",
+      "Action item extraction with assignee and deadline identification",
+      "WebSocket-powered real-time processing during live calls",
+      "Next.js frontend, Node.js backend, OpenAI API"
+    ],
+    "results": "Follow-up consistency improved measurably — action items extracted by the platform were being acted on rather than forgotten. Manual note-taking was eliminated entirely. Sales teams now have a searchable, structured record of every customer conversation.",
+    "thumbnail": "/salesside-saas.png",
+    "tags": ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
+    "category": "SaaS",
+    "liveUrl": "https://saleside.ai/",
+    "githubUrl": ""
+  },
+  {
+    "title": "EduNova — LMS with AI & WebSocket",
+    "slug": "edunova-lms-with-ai-websocket",
+    "description": "An LMS with course management, AI chatbot support, and real-time WebSocket collaboration. It improves learner engagement by combining structured content, instant help, and live communication in one platform.",
+    "problem": "The e-learning platform was losing learners to static content and slow feedback loops. Students worked through material alone, had no way to get instant answers to questions, and couldn't collaborate with peers in real time. Completion rates were suffering.",
+    "solution": "Built EduNova as a full learning management platform with an AI chatbot available throughout every course for on-demand support, and real-time WebSocket communication enabling live collaboration between learners and instructors.",
+    "solutionBullets": [
+      "Full LMS with course management, progress tracking, and content delivery",
+      "AI chatbot integrated per-course for instant on-demand support",
+      "Real-time learner-instructor communication via WebSocket",
+      "Live collaboration features for group learning and Q&A sessions",
+      "Scalable architecture supporting concurrent active users",
+      "Next.js frontend, Node.js backend, OpenAI API, WebSocket"
+    ],
+    "results": "EduNova shipped to production and is live at scale. The combination of AI support and real-time collaboration addressed both the isolation and feedback-speed problems driving disengagement. User engagement increased by 35% and the platform is genuinely differentiated from static alternatives.",
+    "thumbnail": "/edunova-lms.png",
+    "tags": ["React", "Next.js", "Node.js", "WebSocket", "OpenAI API"],
+    "category": "SaaS",
+    "liveUrl": "https://e-learning-five-tau.vercel.app/",
+    "githubUrl": ""
+  },
+  {
+    "title": "ExplodingLeads — Lead Signal Engine",
+    "slug": "explodingleads-lead-signal-engine",
+    "description": "A lead-signal engine that monitors hiring, expansion, and job-posting signals, then qualifies them with AI before delivery. Sales teams receive context-rich leads in Gmail instead of manually scanning the web.",
+    "problem": "Sales teams waste hours manually scanning LinkedIn, Google alerts, and news sources for buying signals — new hires, office expansions, and job postings that indicate a company is in a growth phase and ready to buy. No automation existed to surface and qualify these signals at scale.",
+    "solution": "Built an automated signal detection pipeline using n8n that continuously monitors Google and RapidAPI LinkedIn for new hire announcements, new location openings, and strategic job postings — passing each signal through an AI qualification layer before delivery.",
+    "solutionBullets": [
+      "Google and RapidAPI LinkedIn signal monitoring for new hires, locations, and job postings",
+      "AI-powered ICP qualification layer scoring each signal against defined criteria",
+      "Automated filtering to eliminate noise and surface only high-intent leads",
+      "Enriched lead records with context on the trigger signal",
+      "Direct Gmail delivery of qualified leads ready for outreach"
+    ],
+    "results": "The pipeline surfaces warm, signal-triggered leads on autopilot — eliminating manual prospecting entirely. Sales teams wake up to a Gmail inbox filled with qualified, context-rich leads that have already shown a buying signal, compressing the prospecting cycle from days to minutes.",
+    "thumbnail": "/leadssignals.png",
+    "tags": ["n8n", "Google API", "RapidAPI", "OpenAI API", "Gmail", "LinkedIn"],
+    "category": "AI Automation",
+    "liveUrl": "",
+    "githubUrl": ""
+  }
+]

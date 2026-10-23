@@ -18,6 +18,48 @@ function cs(
 }
 
 export const caseStudies: Record<string, CaseStudy> = {
+  "smartpaie-tunisian-payroll-cnss-saas": cs(
+    "Payroll in Tunisia is rule-heavy: CNSS declarations, IRPP brackets, bonuses, benefits in kind and a stack of mandatory documents. Most small and mid-sized companies still run it in spreadsheets or ageing desktop software, re-keying the same employee data every month and checking calculations by hand.",
+    "I built SmartPaie, a multi-tenant SaaS that keeps the whole payroll cycle in one workspace — from the company and employee files to time tracking, payroll calculation, control and the final payslip. A React front end sits on a Nest.js API and PostgreSQL, shipped in Docker containers through a GitHub Actions pipeline.",
+    [
+      "Payroll engine for Tunisian rules: CNSS contributions, IRPP, bonuses and benefits in kind",
+      "Monthly time tracking per employee, with the status of every month at a glance",
+      "Control centre and payroll journal to review each run before payslips go out",
+      "CNSS statements and declarations, leave records, withholding certificates and employer declarations",
+      "Salary-cost budgeting and forecasting, bank transfers and cash-state exports",
+      "Self-serve sign-up with a 7-day trial, team roles and user management",
+    ],
+    "Companies run payroll from one workspace instead of spreadsheets and re-keyed data. Every month follows the same path — prepare, check, generate — with calculations, contributions and documents produced in one place. SmartPaie is live at smartpaie.tn."
+  ),
+
+  "keen-analytics-privacy-first-web-analytics": cs(
+    "Most analytics tools depend on cookies and personal data — which means consent banners, missing data from visitors who decline, and dashboards full of traffic that never connects to revenue. Teams could see visits, but not which sources and pages actually brought paying customers.",
+    "I built Keen Analytics, a privacy-first platform that measures websites, not people. A lightweight JavaScript SDK (around 1.2 KB, zero cookies) sends events to a Go backend, and a Next.js dashboard ties traffic to conversions and revenue. Services run in Docker and ship through GitHub Actions.",
+    [
+      "Cookie-free tracking — no personal data and no stored IP addresses",
+      "Revenue attribution by source, campaign and page",
+      "Realtime view with a live globe of current visitors",
+      "Pages, funnels, click heatmaps and performance reports",
+      "Multi-site projects, segments, period comparison and automatic insights",
+      "API and MCP access, plus Stripe, RevenueCat and Search Console integrations",
+    ],
+    "Teams get a clear answer to which channels bring paying customers — without consent banners, cookies or personal data. Keen is live at getkeen.cc and tracks production sites, including the Outreach Genie website and app."
+  ),
+
+  "workforce-finance-reporting-dashboard": cs(
+    "Workforce’s financial data lived in Exact Online, but only a few people could find their way around the accounting system. Everyone else waited for exported spreadsheets to see period results, and every new question meant another manual export and reformat.",
+    "I built an invitation-only reporting dashboard for internal teams. n8n workflows pull ledger data from the Exact Online API, map it into the company’s reporting scheme and cache it, and a Next.js front end presents balance sheet and profit-and-loss statements by period.",
+    [
+      "Exact Online API integration through n8n, with an 8-hour data cache",
+      "718 general-ledger mappings rolled up into 146 reporting classifications",
+      "Combined, balance sheet and profit & loss views across all twelve periods",
+      "Built-in accounting control that confirms the statements balance",
+      "Search by account code, collapsible account hierarchy and one-click Excel export",
+      "Secure, invitation-only sign-in with reports assigned per user",
+    ],
+    "Internal teams now read up-to-date financial statements themselves instead of waiting for exports. Reports refresh from Exact Online automatically, every statement carries a balance check, and finance spends far less time producing spreadsheets."
+  ),
+
   "ai-career-path-mapper": cs(
     "Job seekers lack visibility into the specific skills and steps needed to move from their current role to their target position. Generic online advice doesn't account for individual background, and the research process alone can take days with no actionable output.",
     "I built an AI-powered platform that analyzes a user's current role and target career goal, generates a personalized step-by-step roadmap with identified skill gaps, and curates exactly the right learning resources to close them.",

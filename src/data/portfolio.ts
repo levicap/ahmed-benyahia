@@ -156,6 +156,45 @@ export const data: PortfolioData = {
 
   projects: [
     {
+      title: "SmartPaie — Tunisian Payroll & CNSS SaaS",
+      description:
+        "A payroll SaaS built for Tunisian companies. SmartPaie keeps the whole cycle on one thread — from the employee file to the final payslip — covering payroll calculation, CNSS and IRPP contributions, time tracking, control and the HR documents employers have to produce.",
+      thumbnail: "/site/thumbs/smartpaie.jpg",
+      tags: ["React", "Nest.js", "PostgreSQL", "Docker", "GitHub Actions"],
+      category: "SaaS",
+      liveUrl: "https://smartpaie.tn/",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "Payroll, CNSS & IRPP in one workspace",
+      bestFor: "Tunisian SMEs and accounting firms running monthly payroll",
+    },
+    {
+      title: "Keen Analytics — Privacy-First Web Analytics",
+      description:
+        "Keen Analytics is privacy-first, cookie-free web analytics that turns traffic into revenue insights. See which sources, campaigns and pages bring paying customers, without cookies or personal data.",
+      thumbnail: "/site/thumbs/keen.jpg",
+      tags: ["Next.js", "Go", "Docker", "GitHub Actions", "JavaScript SDK"],
+      category: "SaaS",
+      liveUrl: "https://www.getkeen.cc/",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "Revenue attribution without cookies",
+      bestFor: "SaaS and e-commerce teams that want privacy-safe analytics",
+    },
+    {
+      title: "Workforce Finance Reporting Dashboard",
+      description:
+        "An internal financial reporting dashboard for Workforce teams. It pulls ledger data from Exact Online through n8n and presents balance sheet and profit-and-loss statements by period, so staff can read the numbers without working inside the accounting system.",
+      thumbnail: "/site/thumbs/wffinance.jpg",
+      tags: ["Next.js", "n8n", "Exact Online API", "Supabase"],
+      category: "Internal Tool",
+      liveUrl: "",
+      githubUrl: "",
+      featured: true,
+      resultLabel: "Self-serve financial reporting",
+      bestFor: "Finance and operations teams working in Exact Online",
+    },
+    {
       title: "Invoice Parsing & KPI Reporting Dashboard",
       description:
         "A finance operations dashboard that turns messy invoice inputs into one clean, Airtable-ready format. It combines parsing, Supabase storage, Airtable sync, and Recharts KPIs so teams can review invoice flow and reporting from one place.",

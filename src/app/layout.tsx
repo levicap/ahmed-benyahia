@@ -2,32 +2,35 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
+import "./site.css";
+import { SiteShell } from "@/components/site/SiteShell";
 
 export const metadata: Metadata = {
-  title: "Ahmed Ben Yahia — Full-Stack & AI Automation Engineer",
+  title: "Ahmed Ben Yahia — AI Automation Engineer & Full-Stack Developer | n8n, RAG, AI Agents",
   description:
-    "AI automation engineer building reliable workflow systems, intelligent internal tools, and production SaaS. 27+ projects delivered for 10+ clients.",
+    "AI automation engineer and full-stack developer building RAG knowledge assistants, AI voice and chat agents, n8n workflow automation and custom SaaS. Fixed-price engagements, documented hand-over.",
   keywords: [
-    "AI Engineer",
-    "RAG Systems",
-    "n8n Automation",
+    "AI automation engineer",
+    "n8n automation",
+    "RAG chatbot",
+    "AI voice agent",
+    "workflow automation",
+    "full-stack developer",
+    "Next.js developer",
+    "SaaS development",
     "LangChain",
-    "Full Stack Developer",
-    "Next.js",
-    "Freelancer",
+    "freelance AI engineer",
   ],
   openGraph: {
-    title: "Ahmed Ben Yahia — Full-Stack & AI Automation Engineer",
-    description: "Reliable AI systems, workflow automation, and production SaaS built around real operational problems.",
+    title: "Ahmed Ben Yahia — AI Automation Engineer & Full-Stack Developer",
+    description: "RAG assistants, AI agents, n8n automation and custom SaaS — documented, monitored and handed over clean.",
     type: "website",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <Script
           defer
@@ -40,16 +43,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Runtime loading avoids making the production build depend on Google Fonts availability. */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
-        <ThemeProvider>
-          {children}
-          <WhatsAppButton />
-          <Analytics />
-        </ThemeProvider>
+        <SiteShell>{children}</SiteShell>
+        <Analytics />
       </body>
     </html>
   );
